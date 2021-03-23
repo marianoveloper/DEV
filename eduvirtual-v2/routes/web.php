@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
