@@ -1,3 +1,6 @@
+<x-app-layout>
+</x-app-layout>
+{{--
 <!doctype html>
 <html>
     <head>
@@ -24,4 +27,4 @@ var botmanWidget = {
 </script>
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 
-</html>
+</html>--}}

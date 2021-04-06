@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -43,4 +44,14 @@
 
         @livewireScripts
     </body>
+
+  <script>
+    var botmanWidget = {
+        frameEndpoint: '/botman/chat',
+        title:"Educación Virtual",
+         introMessage: 'Bienvenido a Uccuyo Virtual',
+         bubbleAvatarUrl:"images/gordito.png",
+    };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </html>
