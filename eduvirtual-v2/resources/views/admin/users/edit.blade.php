@@ -27,7 +27,7 @@
 
         {!! Form::submit('Asignar rol', ['class'=> 'btn btn-primary mt-2']) !!}
 
-        {{!! Form::close()!!}}
+        {!! Form::close()!!}
 
     </div>
 </div>
