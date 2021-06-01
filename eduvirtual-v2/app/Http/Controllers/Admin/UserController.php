@@ -10,6 +10,14 @@ use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
+    public function _construct(){
+        $this->middleware('can:Leer usuarios')->only('index');
+       
+        $this->middleware('can: Editar usuarios')->only('edit','update');
+       
+
+    }
+
     /**
      * Display a listing of the resource.
      *

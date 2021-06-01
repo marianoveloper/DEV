@@ -9,7 +9,7 @@ use App\Models\Category;
 
 use Livewire\WithPagination;
 
-class CourseIndex extends Component
+class CoursesIndex extends Component
 {
     use WithPagination;//paginacion dinamica
 
