@@ -15,14 +15,15 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->float('value');
-            $table->integer('quota');
-            $table->string('inscription_value');
-            $table->string('matricula_value');
-            $table->string('bonus_description');
-            $table->string('cbu_transfer');
-            $table->string('dolar_value');
-            $table->string('payment_others');
+            $table->string('name');
+            $table->integer('value');//precio
+            $table->integer('quota')->nullable();;//cuotas
+            $table->integer('inscription_value')->nullable();;//valor inscripcion
+            $table->integer('matricula_value')->nullable();//valor matricula
+            $table->string('bonus_description')->nullable();//descripcion bono
+            $table->string('cbu_transfer')->nullable();//cbu
+            $table->string('dolar_value')->nullable();//valor del dolar
+            $table->string('payment_others')->nullable();//otros pagos
             $table->timestamps();
         });
     }

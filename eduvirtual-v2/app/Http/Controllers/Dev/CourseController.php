@@ -15,7 +15,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('dev.courses.index');
+        return view('dev.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('dev.courses.create');
+        return view('dev.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return view('dev.courses.show',compact('course'));
+        return view('dev.show',compact('course'));
     }
 
     /**

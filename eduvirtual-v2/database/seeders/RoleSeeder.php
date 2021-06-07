@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
@@ -20,6 +22,6 @@ class RoleSeeder extends Seeder
 
         $role = Role::create(['name' => 'Dev']);
 
-        $role->syncPermission(['Crear cursos','Leer cursos','Actualizar cursos','Eliminar cursos',]);
+        $role->syncPermissions(['Crear cursos','Leer cursos','Actualizar cursos','Eliminar cursos',]);
     }
 }

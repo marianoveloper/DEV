@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     use HasFactory;
+    protected $guarded=['id'];
+    //relacion uno a muchos
+
+    public function courses(){
+        return $this->hasMany('App\Models\Course');
+    }
 }

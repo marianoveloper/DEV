@@ -8,6 +8,7 @@
         Buscar
     </button>
     @if($search){
+
         <ul class="absolute w-full mt-1 overflow-hidden bg-white rounded-lg z-50-left-0">
             @forelse($this->results as $result)
                 <li class="px-5 text-sm leading-10 cursor-pointer hover:bg-gray-300">

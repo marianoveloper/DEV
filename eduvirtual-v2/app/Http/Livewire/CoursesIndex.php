@@ -12,6 +12,7 @@ use Livewire\WithPagination;
 class CoursesIndex extends Component
 {
     use WithPagination;//paginacion dinamica
+   // protected $paginationTheme = 'bootstrap';
 
     public $type_id;
     public $category_id;
@@ -25,11 +26,12 @@ class CoursesIndex extends Component
         ->type($this->type_id)
         ->latest('id')
         ->paginate(8);
-        return view('livewire.course-index',compact('courses','types','categories'));
+
+        return view('livewire.courses-index',compact('courses','types','categories'));
     }
 
     public function resetFilters(){
 
-        $this->reset(['category_id',['type_id']]);
+        $this->reset(['category_id'],['type_id']);
     }
 }

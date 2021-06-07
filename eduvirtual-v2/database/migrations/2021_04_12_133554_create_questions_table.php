@@ -15,15 +15,15 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('cel');
-            $table->string('contacto');
-            $table->string('question');
-            $table->text('consult');
+            $table->string('name');//nombre
+            $table->string('last_name');//apellido
+            $table->string('email');//correo
+            $table->string('cel');//celular de contacto
+            $table->string('contacto');//forma de contacto
+            $table->string('question');//elegir tipo de consulta
+            $table->text('consulta');//agregar una consulta personalizada
 
-            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('course_id');//curso
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
