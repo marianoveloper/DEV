@@ -20,8 +20,7 @@
             class="grid grid-cols-1 px-4 mx-auto gap-x-6 gap-y-8 max-w-7xl sm:px-6 lg:px-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <article>
                 <figure>
-                    <img class="object-cover w-full rounded-xl h-36"
-                        src={{asset('images/homes/carrera.png')}}>
+                    <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/carrera.png')}}>
 
                 </figure>
                 <header class="mt-2">
@@ -41,8 +40,7 @@
 
             <article>
                 <figure>
-                    <img class="object-cover w-full rounded-xl h-36"
-                        src={{asset('images/homes/curso.png')}}>
+                    <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/curso.png')}}>
 
                 </figure>
                 <header class="mt-2">
@@ -79,8 +77,7 @@
 
     <section class="my-16">
         <h1 class="mb-6 text-3xl text-center text-gray-600">DESTACADOS</h1>
-        <div
-            class="grid mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8 gap-x-6 gap-y-8">
+        <div class="grid mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8 gap-x-6 gap-y-8">
 
             @foreach($courses as $course)
             <x-course-card :course="$course" />
@@ -89,23 +86,27 @@
         </div>
     </section>
 
-<section class="mt-16 w-full py-6 px-4 my-32 bg-gray-200">
+    <section class="w-full px-4 py-6 my-32 mt-16 bg-gray-200">
 
-        <div class="px-4 pt-3 pb-4 border-b -mx-4 border-gray-400 bg-white">
+        <div class="px-4 pt-3 pb-4 -mx-4 bg-white border-b border-gray-400">
             <div class="max-w-xl mx-auto">
-                <h2 class="text-xl text-left inline-block font-semibold text-gray-800">Suscribite y recibí novedades</h2>
-                <p class="text-gray-700 text-xs pl-px">
+                <h2 class="inline-block text-xl font-semibold text-left text-gray-800">Suscribite y recibí novedades
+                </h2>
+                <p class="pl-px text-xs text-gray-700">
                     Te enviaremos por email información sobre nuevos cursos, carreras y posgrados online
                 </p>
                 <form action="#" class="mt-2">
                     <div class="flex items-center">
-                        <input type="email" class="w-full px-2 py-4 mr-2  bg-gray-100 shadow-inner rounded-md border border-gray-400 focus:outline-none" required>
-                        <button class="bg-blue-600 text-gray-200 px-5 py-2 rounded shadow " style="margin-left: -7.8rem;">Sign Up</button>
+                        <input type="email"
+                            class="w-full px-2 py-4 mr-2 bg-gray-100 border border-gray-400 rounded-md shadow-inner focus:outline-none"
+                            required>
+                        <button class="px-5 py-2 text-gray-200 bg-blue-600 rounded shadow "
+                            style="margin-left: -7.8rem;">Sign Up</button>
                     </div>
                 </form>
             </div>
         </div>
 
-</section>
-   
+    </section>
+
 </x-app-layout>

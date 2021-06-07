@@ -1,5 +1,5 @@
 <div>
-    <div class="py-4 bg-gray-200">
+    <div class="py-4 mb-16 bg-gray-200">
         <div class="flex px-4 mx-auto max-w-7xl sm-px-6 lg:px-8">
             <button class="h-12 px-4 mr-4 text-gray-700 bg-white rounded-lg shadow focus:outline-none">
 
