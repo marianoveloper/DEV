@@ -1,13 +1,13 @@
 <form class="relative pt-2 mx-auto text-gray-600" autocomplete="off">
     <input wire:model="search"
-        class="w-full h-10 px-5 pr-16 text-sm bg-white border-2 border-gray-300 rounded-lg focus:outline-none"
-        type="search" name="search" placeholder="Search">
+        class="w-full h-10 px-5 pr-16 bg-white border-2 border-gray-300 rounded-lg text-md focus:outline-none"
+        type="search" name="search" placeholder="¿Qué querés estudiar?">
 
     <button type="submit"
-        class="absolute top-0 right-0 px-4 py-2 mt-2 font-bold bg-blue-500 rounded hover:bg-blue-700">
+        class="absolute top-0 right-0 px-4 py-2 mt-2 font-bold bg-yellow-500 rounded hover:bg-yellow-700">
         Buscar
     </button>
-    @if($search){
+    @if($search)
 
         <ul class="absolute w-full mt-1 overflow-hidden bg-white rounded-lg z-50-left-0">
             @forelse($this->results as $result)
@@ -19,7 +19,7 @@
             @endforelse
         </ul>
 
-    }
+
     @endif
 
 </form>

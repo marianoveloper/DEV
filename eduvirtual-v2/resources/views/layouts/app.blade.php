@@ -41,7 +41,7 @@
             </main>
            <x-footer/>
         </div>
-        
+
         @stack('modals')
 
         @livewireScripts
@@ -52,7 +52,7 @@
         frameEndpoint: '/botman/chat',
         title:"Educación Virtual",
          introMessage: 'Bienvenido a Uccuyo Virtual',
-         bubbleAvatarUrl:"images/gordito.png",
+         bubbleAvatarUrl:"images/chatbot.png",
     };
     </script>
    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
