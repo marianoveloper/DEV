@@ -14,17 +14,43 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        Type::create([
 
-            'name'=>'Carrera',
+        Type::create([
+            'name'=>'Tecnicatura'
         ]);
         Type::create([
-
-            'name'=>'Diplomatura',
+            'name'=>'Licenciatura'
         ]);
         Type::create([
+            'name'=>'Profesorado'
+        ]);
+        Type::create([
+            'name'=>'Especialización'
 
-            'name'=>'Curso',
+        ]);
+        Type::create([
+            'name'=>'Maestría'
+        ]);
+        Type::create([
+            'name'=>'Doctorado'
+        ]);
+        Type::create([
+            'name'=>'Diplomatura'
+        ]);
+        Type::create([
+            'name'=>'Actualización'
+        ]);
+        Type::create([
+            'name'=>'Taller'
+        ]);
+        Type::create([
+            'name'=>'Posgrado'
+        ]);
+        Type::create([
+            'name'=>'Grado'
+        ]);
+        Type::create([
+            'name'=>'PreGrado'
         ]);
     }
 }

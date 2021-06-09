@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Category;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
@@ -15,41 +16,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name'=>'Tecnicatura'
-        ]);
-        Category::create([
-            'name'=>'Licenciatura'
-        ]);
-        Category::create([
-            'name'=>'Profesorado'
-        ]);
-        Category::create([
-            'name'=>'Especialización'
 
+            'name'=>'Carreras',
+            'slug'=>Str::slug('Carreras'),
         ]);
         Category::create([
-            'name'=>'Maestría'
+
+            'name'=>'Diplomaturas y Especializaciones',
+            'slug'=>Str::slug('Diplomaturas y Especializaciones')
         ]);
         Category::create([
-            'name'=>'Doctorado'
-        ]);
-        Category::create([
-            'name'=>'Diplomatura'
-        ]);
-        Category::create([
-            'name'=>'Actualización'
-        ]);
-        Category::create([
-            'name'=>'Taller'
-        ]);
-        Category::create([
-            'name'=>'Posgrado'
-        ]);
-        Category::create([
-            'name'=>'Grado'
-        ]);
-        Category::create([
-            'name'=>'PreGrado'
+
+            'name'=>'Cursos de Actualización',
+            'slug'=>Str::slug('Cursos de Actualización')
         ]);
 
     }

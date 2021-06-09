@@ -1,7 +1,7 @@
 <div>
     <div class="py-4 mb-16 bg-gray-200">
         <div class="flex px-4 mx-auto max-w-7xl sm-px-6 lg:px-8">
-            <button class="h-12 px-4 mr-4 text-gray-700 bg-white rounded-lg shadow focus:outline-none">
+            <button wire:click="resetFilters" class="h-12 px-4 mr-4 text-gray-700 bg-white rounded-lg shadow focus:outline-none">
 
                 <i class="mr-2 text-xs fas fa-archway"></i>
                 Todos los cursos
@@ -14,17 +14,17 @@
                     class="block h-12 px-4 overflow-hidden text-gray-700 bg-white rounded-lg shadow focus:outline-none"
                     x-on:click="open = !open">
                     <i class="ml-2 text-sm fas fa-tags"></i>
-                    Tipo
+                    Categoría
                     <i class="ml-2 text-sm fas fa-angle-down"></i>
                 </button>
                 <!-- Dropdown Body -->
                 <div class="absolute right-0 w-40 py-2 mt-2 bg-white border rounded shadow-xl" x-show="open"
                     x-on:click.away="open = false">
-                    @foreach ($types as $type )
-                    <a
-                    class="block px-4 py-2 text-gray-900 transition-colors duration-200 rounded cursor-pointer text-normal hover:bg-yellow-500 hover:text-white" wire:click="$set('type_id',{{$type->id}})" x-on:click="open = false">{{$type->name}}</a>
-                    @endforeach
 
+                    @foreach ($categories as $category )
+                    <a class="block px-4 py-2 text-gray-900 transition-colors duration-200 rounded cursor-pointer text-normal hover:bg-yellow-500 hover:text-white" wire:click="$set('category_id',{{$category->id}})" x-on:click="open = false">{{$category->name}}</a>
+
+                    @endforeach
                 </div>
                 <!-- // Dropdown Body -->
             </div>
@@ -36,15 +36,15 @@
                     class="block h-12 px-4 overflow-hidden text-gray-700 bg-white rounded-lg shadow focus:outline-none"
                     x-on:click="open = !open">
                     <i class="ml-2 text-sm fas fa-tags"></i>
-                    Categoría
+                   SubCategoría
                     <i class="ml-2 text-sm fas fa-angle-down"></i>
                 </button>
                 <!-- Dropdown Body -->
                 <div class="absolute right-0 w-40 py-2 mt-2 bg-white border rounded shadow-xl" x-show="open"
                     x-on:click.away="open = false">
-                    @foreach ($categories as $category )
-                    <a class="block px-4 py-2 text-gray-900 transition-colors duration-200 rounded cursor-pointer text-normal hover:bg-yellow-500 hover:text-white" wire:click="$set('category_id',{{$category->id}})" x-on:click="open = false">{{$category->name}}</a>
-
+                    @foreach ($types as $type )
+                    <a
+                    class="block px-4 py-2 text-gray-900 transition-colors duration-200 rounded cursor-pointer text-normal hover:bg-yellow-500 hover:text-white" wire:click="$set('type_id',{{$type->id}})" x-on:click="open = false">{{$type->name}}</a>
                     @endforeach
 
                 </div>

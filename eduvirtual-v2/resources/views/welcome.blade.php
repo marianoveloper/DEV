@@ -15,38 +15,43 @@
     </section>
 
     <section class="mt-24">
-        <h1 class="mb-6 text-3xl text-center text-green-900">Propuestas Virtuales</h1>
+        <h1 class="mb-6 text-3xl text-center text-green-900">Propuestas Virtuales </h1>
         <div
             class="grid grid-cols-1 px-4 mx-auto gap-x-6 gap-y-8 max-w-7xl sm:px-6 lg:px-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <article>
+                <a href="{{route('categories.show',$category[0])}}">
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/carrera.png')}}>
 
                 </figure>
+
                 <header class="mt-2">
-                    <h1 class="text-xl text-center text-green-800"> Carreras </h1>
+                    <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> Carreras </h1>
                 </header>
+            </a>
             </article>
             <article>
+                <a href="{{route('categories.show',$category[1])}}">
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/diplomatura.png')}}>
 
                 </figure>
                 <header class="mt-2">
-                    <h1 class="text-xl text-center text-green-800"> Diplomaturas y Especializaciones </h1>
+                    <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> Diplomaturas y Especializaciones </h1>
                 </header>
-
+                </a>
             </article>
 
             <article>
+                <a href="{{route('categories.show',$category[2])}}">
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/curso.png')}}>
 
                 </figure>
                 <header class="mt-2">
-                    <h1 class="text-xl text-center text-green-800 hover:scale-50">Cursos de Capacitación y/o Actualización </h1>
+                    <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline">Cursos de Capacitación </h1>
                 </header>
-
+                </a>
             </article>
 
         </div>
