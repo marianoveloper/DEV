@@ -45,15 +45,21 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            var botmanWidget = {
+                frameEndpoint: '/botman/chat',
+                title:"Uccuyo Virtual",
+                 introMessage: 'Bienvenido a Uccuyo Virtual en que podemos ayudarte',
+                 mainColor: '#fd9807',
+                 bubbleBackground:'#fd9807',
+                 bubbleAvatarUrl:'../images/chatbot2.png',
+                 placeholderText: 'Ingresa tu consulta',
+                 aboutLink: 'www.evirtualsj.com',
+                 aboutText: 'DEV Uccuyo',
+            };
+            </script>
+           <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
     </body>
 
-  <script>
-    var botmanWidget = {
-        frameEndpoint: '/botman/chat',
-        title:"Educación Virtual",
-         introMessage: 'Bienvenido a Uccuyo Virtual',
-         bubbleAvatarUrl:"images/chatbot.png",
-    };
-    </script>
-   <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
 </html>

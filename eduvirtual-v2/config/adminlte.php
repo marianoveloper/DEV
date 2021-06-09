@@ -257,10 +257,15 @@ return [
             'active'    => ['admin/users*'],
 
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'OPCIONES DE CURSOS'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Categorías',
+            'url'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Pendientes de aprobación',
+            'url'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

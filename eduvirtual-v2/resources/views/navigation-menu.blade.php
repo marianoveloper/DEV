@@ -6,9 +6,9 @@
             'active' => request()->routeIs('home')
         ],
         [
-            'name' => 'Cursos',
+            'name' => 'Propuestas',
             'route' => route('courses.index'),
-            'active' => request()->routeIs('courses.index')
+            'active' => request()->routeIs('courses.*')
 ],
     ];
 @endphp
@@ -127,14 +127,14 @@
                                 {{ __('Dev') }}
                             </x-jet-dropdown-link>
                             @endcan
-                            
+
 
                             @can('Ver dashboard')
                             <x-jet-dropdown-link href="{{ route('admin.home') }}">
                                 {{ __('Administrador') }}
                             </x-jet-dropdown-link>
                             @endcan
-                            
+
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -217,13 +217,13 @@
                 </x-jet-responsive-nav-link>
 
                 @endcan
-               
+
                 @can('Ver dashboard')
                 <x-jet-responsive-nav-link href="{{ route('admin.home') }}" :active="request()->routeIs('admin.home')">
                     {{ __('Administrador') }}
                 </x-jet-responsive-nav-link>
                 @endcan
-               
+
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">

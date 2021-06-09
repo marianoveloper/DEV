@@ -57,7 +57,7 @@
         <h1 class="text-3xl text-center text-white">¿No sabes que Estudiar?</h1>
         <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
         <div class="flex justify-center mt-4">
-            <a href="#"
+            <a href="{{route('courses.index')}}"
             class="block px-4 py-2 mt-4 font-bold text-center text-yellow-500 bg-green-800 rounded hover:bg-green-900">
           Catálogo de Propuestas
         </a>
@@ -75,7 +75,7 @@
 
         </div>
     </section>
-
+<!--suscripcion
     <section class="w-full px-4 py-6 my-32 mt-16 bg-white">
 
         <div class="block w-full px-4 pt-3 pb-4 -mx-4 from-yellow-500 via-teal-600 to-yellow-600 bg-gradient-to-r">
@@ -97,6 +97,6 @@
             </div>
         </div>
 
-    </section>
+    </section>-->
 
 </x-app-layout>
