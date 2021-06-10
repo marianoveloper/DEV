@@ -36,7 +36,7 @@
                     class="block h-12 px-4 overflow-hidden text-gray-700 bg-white rounded-lg shadow focus:outline-none"
                     x-on:click="open = !open">
                     <i class="ml-2 text-sm fas fa-tags"></i>
-                   SubCategoría
+                   Subcategoría
                     <i class="ml-2 text-sm fas fa-angle-down"></i>
                 </button>
                 <!-- Dropdown Body -->
@@ -64,7 +64,7 @@
 
     </div>
 
- <div class="flex justify-center px-4 mx-auto mt-8 mb-8 max-w-7xl sm:px-6 lg:px-8">
+ <div class="px-4 mx-auto mt-8 mb-16 max-w-7xl sm:px-6 lg:px-8">
 
         {{$courses->links()}}
     </div>

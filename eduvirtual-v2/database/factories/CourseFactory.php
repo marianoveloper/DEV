@@ -36,17 +36,17 @@ class CourseFactory extends Factory
         return [
             'title'=> $title,
             'subtitle'=>  $this->faker->sentence(),
-            'description' => $this->faker->paragraph(),            
+            'description' => $this->faker->paragraph(5),
             'destination' =>  $this->faker->sentence(),
             'date_start' =>$this->faker->date(),
             'url_info' => $this->faker->url(),
             'status' =>  $this->faker->randomElement([Course::Borrador, Course::Revision, Course::Publicado]),
-            
-   
+
+
             'link_inscription'=>$this->faker->url(),
             'slug' => Str::slug($title),
             'user_id'=>User::all()->random()->id,
-            
+
             'type_id'=>Type::all()->random()->id,
             'category_id'=>Category::all()->random()->id,
             'payment_id'=>Payment::all()->random()->id,

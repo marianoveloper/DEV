@@ -1,4 +1,4 @@
-
+<section >
       <footer class="bg-yellow dark:bg-gray-800">
         <div class="container px-6 py-4 mx-auto ">
             <div class="lg:flex">
@@ -77,3 +77,4 @@
         </div>
     </footer>
 
+</section>

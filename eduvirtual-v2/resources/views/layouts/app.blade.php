@@ -39,9 +39,9 @@
             <main>
                 {{ $slot }}
             </main>
-           <x-footer/>
-        </div>
 
+        </div>
+        <x-footer/>
         @stack('modals')
 
         @livewireScripts
@@ -49,7 +49,7 @@
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',
                 title:"Uccuyo Virtual",
-                 introMessage: 'Bienvenido a Uccuyo Virtual en que podemos ayudarte',
+                 introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
                  mainColor: '#fd9807',
                  bubbleBackground:'#fd9807',
                  bubbleAvatarUrl:'../images/chatbot2.png',
