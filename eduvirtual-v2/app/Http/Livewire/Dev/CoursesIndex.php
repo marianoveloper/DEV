@@ -13,6 +13,7 @@ class CoursesIndex extends Component
 
     public function render()
     {
+
         $courses = Course::where('title','LIKE','%' . $this->search . '%')
                         ->where('user_id',auth()->user()->id)
                         ->paginate(8);
@@ -20,7 +21,7 @@ class CoursesIndex extends Component
         return view('livewire.dev.courses-index',compact('courses'));
     }
 
-    public function Limpiar_page(){
+    public function limpiar_page(){
 
         $this->reset('page');
     }

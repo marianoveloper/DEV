@@ -58,6 +58,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('dev')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/dev.php'));
+
+                Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/botman.php'));
+
         });
     }
 

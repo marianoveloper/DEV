@@ -1,17 +1,21 @@
-<div class="container">
+<div class="container py-8">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <x-table-responsive>
         <div class="px-6 py-4">
-            <input wire:keydown="limpiar_page" class="w-full shadow-sm form-input"
+            <input wire:keydown="limpiar_page" wire:model="search" class="w-full h-10 px-5 pr-16 bg-white border-2 border-gray-300 rounded-lg text-md focus:outline-none"
                 placeholder="Ingrese el nombre de un curso...">
         </div>
         @if($courses->count())
-        <table class="min-w-full divide-y divide-gray-200">
+         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col"
                         class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Nombre
+                        Imagen
+                    </th>
+                    <th scope="col"
+                        class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                        Titulo
                     </th>
                     <th scope="col"
                         class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
@@ -21,10 +25,7 @@
                         class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                         Status
                     </th>
-                    <th scope="col"
-                        class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Role
-                    </th>
+
                     <th scope="col" class="relative px-6 py-3">
                         <span class="sr-only">Edit</span>
                     </th>
@@ -41,19 +42,20 @@
                             <div class="flex-shrink-0 w-10 h-10">
                                 <img class="w-10 h-10 rounded-full" src="{{asset($course->image->url)}}" alt="">
                             </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
                             <div class="ml-4">
                                 <div class="text-sm font-medium text-gray-900">
                                     {{$course->title}}
+
                                 </div>
-                                <div class="text-sm text-gray-500">
-                                    {{$course->category}}
-                                </div>
+
                             </div>
                         </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-900">{{$course->type->name}}</div>
-                        <div class="text-sm text-gray-500">Optimization</div>
+                        <div class="text-sm text-gray-900">{{$course->category->name}}</div>
+                        <div class="text-sm text-gray-500">{{$course->type->name}}</div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         @switch($course->status)
@@ -82,7 +84,7 @@
                     </td>
 
                     <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <a href="{{route('dev.courses.edit',$course)}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                     </td>
                 </tr>
 
@@ -96,11 +98,11 @@
         <div class="px-6 py-4">
             {{$courses->links()}}
         </div>
-    @else
+     @else
         <div class="px-6 py-4">
             No hay ningun registro coincidente
         </div>
-    @endif
+        @endif
 
 
     </x-table-responsive>

@@ -45,6 +45,11 @@
         @stack('modals')
 
         @livewireScripts
+
+        @isset($js)
+        {{$js}}
+
+        @endisset
         <script>
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',

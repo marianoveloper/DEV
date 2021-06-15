@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Dev;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Type;
 use App\Models\Course;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CourseController extends Controller
 {
@@ -58,7 +60,10 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        $categories=Category::pluck('name','id');
+        $types=Type::pluck('name','id');
+
+        return view('dev.edit',compact('course','categories','types'));
     }
 
     /**
