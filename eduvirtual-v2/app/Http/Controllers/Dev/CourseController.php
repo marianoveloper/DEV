@@ -26,8 +26,9 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('dev.create');
+    {$categories=Category::pluck('name','id');
+        $types=Type::pluck('name','id');
+        return view('dev.create',compact('categories','types'));
     }
 
     /**
@@ -38,7 +39,20 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //reglas de validacion
+
+        $request->validate([
+            'title'=> 'required',
+            'slug'=> 'required|unique:courses',
+            'description'=> 'required',
+            'category_id'=> 'required',
+            'type_id'=> 'required',
+
+        ]);
+
+        $course=Course::create($request->all());
+
+      return redirect()->route('dev.edit',$course);
     }
 
     /**

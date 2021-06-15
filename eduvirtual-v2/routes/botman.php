@@ -9,4 +9,4 @@ $botman->hears('Hi|Hola', function ($bot) {
 });
 
 $botman->hears('interactivo',BotManController::class.'@startInteractive');
-//$botman->hears('matematicas',BotmanController::class.'@StartOperations');
+$botman->hears('matematicas',BotmanController::class.'@StartOperations');

@@ -1,9 +1,10 @@
 <div class="container py-8">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <x-table-responsive>
-        <div class="px-6 py-4">
-            <input wire:keydown="limpiar_page" wire:model="search" class="w-full h-10 px-5 pr-16 bg-white border-2 border-gray-300 rounded-lg text-md focus:outline-none"
+        <div class="flex px-6 py-4">
+            <input wire:keydown="limpiar_page" wire:model="search" class="flex-1 w-full h-10 px-5 pr-16 bg-white border-2 border-gray-300 rounded-lg text-md focus:outline-none"
                 placeholder="Ingrese el nombre de un curso...">
+                <a class="ml-2 btn btn-danger" href={{route('dev.courses.create')}}>Crear nuevo curso</a>
         </div>
         @if($courses->count())
          <table class="min-w-full divide-y divide-gray-200">
@@ -40,7 +41,11 @@
                     <td class="px-6 py-4 whitespace-nowrap">
                         <div class="flex items-center">
                             <div class="flex-shrink-0 w-10 h-10">
-                                <img class="w-10 h-10 rounded-full" src="{{asset($course->image->url)}}" alt="">
+                                @isset($course->image)
+                                <img id="picture" class="object-cover object-center w-10 h-10 rounded-full" src="{{asset($course->image->url)}}">
+                                @else
+                                <img id="picture" class="object-cover object-center w-10 h-10 rounded-full" src="{{asset('images/cursos/9.png')}}">
+                                @endisset
                             </div>
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
