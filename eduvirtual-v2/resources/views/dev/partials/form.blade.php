@@ -15,14 +15,45 @@
 @enderror
 </div>
 <div class="mb-4">
-    {!! Form::label('description', 'Descripción del Curso') !!}
+    {!! Form::label('description', 'Descripción') !!}
     {!! Form::textarea('description', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('description')? 'border-red-600': '')]) !!}
 
     @error('description')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>
+<div class="mb-4">
+    {!! Form::label('destination', 'Destinatarios') !!}
+    {!! Form::text('destination', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('destination')? 'border-red-600': '')]) !!}
 
+    @error('destination')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
+    {!! Form::label('date_start', 'Fecha de Inicio') !!}
+{!! Form::date('date_start', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
+
+    @error('date_start')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
+    {!! Form::label('url_info', 'Link del informativo') !!}
+    {!! Form::text('url_info', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('url_info')? 'border-red-600': '')]) !!}
+
+    @error('url_info')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
+    {!! Form::label('link_inscription', 'Link de Inscripcion') !!}
+    {!! Form::text('link_inscription', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('link_inscription')? 'border-red-600': '')]) !!}
+
+    @error('link_inscription')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
 <div class="grid gap-4 drid-cols-3">
     <div>
         {!! Form::label('category_id', 'Categoria') !!}
@@ -40,7 +71,7 @@
 <div class="grid grid-cols-2 gap-4">
     <figure>
         @isset($course->image)
-        <img id="picture" class="object-cover object-center w-full h-64" src="{{asset($course->image->url)}}">
+        <img id="picture" class="object-cover object-center w-full h-64" src="{{Storage::url($course->image->url)}}">
         @else
         <img id="picture" class="object-cover object-center w-full h-64" src="{{asset('images/cursos/9.png')}}">
         @endisset

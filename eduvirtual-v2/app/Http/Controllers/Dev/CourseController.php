@@ -7,7 +7,7 @@ use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Storage;
 class CourseController extends Controller
 {
     /**
@@ -17,7 +17,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('dev.index');
+        return view('dev.courses.index');
     }
 
     /**
@@ -26,9 +26,10 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {$categories=Category::pluck('name','id');
+    {
+        $categories=Category::pluck('name','id');
         $types=Type::pluck('name','id');
-        return view('dev.create',compact('categories','types'));
+        return view('dev.courses.create',compact('categories','types'));
     }
 
     /**
@@ -45,6 +46,10 @@ class CourseController extends Controller
             'title'=> 'required',
             'slug'=> 'required|unique:courses',
             'description'=> 'required',
+            'destination'=>'required',
+            'date_start'=>'required',
+            'url_info'=>'required',
+            'link_inscription'=>'required',
             'category_id'=> 'required',
             'type_id'=> 'required',
 
@@ -52,7 +57,15 @@ class CourseController extends Controller
 
         $course=Course::create($request->all());
 
-      return redirect()->route('dev.edit',$course);
+        if($request->file('file')){
+            $url=Storage::put('courses', $request->file('file'));
+        }
+
+        $course->image()->create([
+            'url'=>$url,
+        ]);
+
+      return redirect()->route('dev.courses.edit', $course);
     }
 
     /**
@@ -77,7 +90,7 @@ class CourseController extends Controller
         $categories=Category::pluck('name','id');
         $types=Type::pluck('name','id');
 
-        return view('dev.edit',compact('course','categories','types'));
+        return view('dev.courses.edit',compact('course','categories','types'));
     }
 
     /**
@@ -89,7 +102,38 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        $request->validate([
+            'title'=> 'required',
+            'slug'=> 'required|unique:courses,slug,'.$course->id,
+            'description'=> 'required',
+            'destination'=>'required',
+            'date_start'=>'required',
+            'url_info'=>'required',
+            'link_inscription'=>'required',
+            'category_id'=> 'required',
+            'type_id'=> 'required',
+
+        ]);
+$course->update($request->all());
+
+if($request->file('file')){
+    $url=Storage::put('courses',$request->file('file'));
+
+    if($course->image){
+        Storage::delete($course->image->url);
+
+        $course->image->update([
+            'url'=>$url,
+        ]);
+    }else{
+        $course->image()->create([
+            'url'=>$url,
+        ]);
+    }
+}
+
+return redirect()->route('dev.courses.edit',$course);
+
     }
 
     /**

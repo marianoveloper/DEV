@@ -7,6 +7,7 @@
 
                 {!! Form::open(['route'=> 'dev.courses.store','files'=>true, 'autocomplete'=>'off']) !!}
 
+                {!! Form::hidden('user_id',auth()->user()->id) !!}
                 @include('dev.partials.form')
 
                 <div class="flex justify-end">
