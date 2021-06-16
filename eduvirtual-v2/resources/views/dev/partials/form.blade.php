@@ -73,7 +73,7 @@
         @isset($course->image)
         <img id="picture" class="object-cover object-center w-full h-64" src="{{Storage::url($course->image->url)}}">
         @else
-        <img id="picture" class="object-cover object-center w-full h-64" src="{{asset('images/cursos/9.png')}}">
+        <img id="picture" class="object-cover object-center w-full h-64" src="{{asset('images/homes/curso.png')}}">
         @endisset
     </figure>
     <div>

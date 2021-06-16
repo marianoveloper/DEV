@@ -21,7 +21,7 @@ class ImageFactory extends Factory
      */
     public function definition()
     {
-        $fileName = $this->faker->numberBetween(1, 10) . '.png';
+        $fileName = $this->faker->numberBetween(1, 25) . '.png';
 
         return [
             'url' => "images/cursos/{$fileName}"
