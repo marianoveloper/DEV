@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>DEV </b> Uccuyo',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>DEV </b>Uccuyo',
+    'logo_img' => 'images/logos/icono2.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -88,6 +88,7 @@ return [
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
+    'layout_dark_mode' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -144,7 +145,7 @@ return [
     |
     */
 
-    'sidebar_mini' => true,
+    'sidebar_mini' => 'lg',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -187,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => '/',
+    'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -224,10 +225,14 @@ return [
     */
 
     'menu' => [
+        // Navbar items:
+
+
+
+        // Sidebar items:
         [
+            'type' => 'sidebar-menu-search',
             'text' => 'search',
-            'search' => true,
-            'topnav' => true,
         ],
         [
             'text' => 'blog',
@@ -236,11 +241,12 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'route'         => 'admin.home',
+            'url'         => 'admin/home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
-            'can'        => 'Ver dashboard ',
-
+            
+            
         ],
+       
         [
             'text'        => 'Lista de Roles',
             'route'         => 'admin.roles.index',
@@ -257,17 +263,13 @@ return [
             'active'    => ['admin/users*'],
 
         ],
-        ['header' => 'OPCIONES DE CURSOS'],
+        ['header' => 'account_settings'],
         [
-            'text' => 'Categorías',
-            'url'  => 'admin.categories.index',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Categorias',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-cogs',
         ],
-        [
-            'text' => 'Pendientes de aprobación',
-            'url'  => 'admin.courses.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+        
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
@@ -311,22 +313,7 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+
     ],
 
     /*
@@ -359,7 +346,7 @@ return [
     | Here we can modify the plugins used inside the admin panel.
     |
     | For detailed instructions you can look the plugins section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Plugins-Configuration
     |
     */
 

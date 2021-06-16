@@ -8,6 +8,16 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
+   /*****
+       public function _construct(){
+        $this->middleware('can:Listar category')->only('index');
+        $this->middleware('can:Crear category')->only('create','store');
+        $this->middleware('can: Editar category')->only('edit','update');
+        $this->middleware('can:Eliminar category')->only('destroy');
+
+    }
+
+     ***/
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        $categories=Category::all();
+
+
+        return view('admin.categories.index',compact('categories'));
     }
 
     /**
@@ -36,7 +49,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+           'name'=> 'required|unique:categories'
+       ]);
+
+      $category= Category::create($request->all());
+
+       return redirect()->route('admin.categories.edit',$category)->with('info','la categoria se creo con exito');
     }
 
     /**
@@ -70,7 +89,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name'=> 'required|unique:categories,name,'.$category->id,
+        ]);
+
+        $category->update($request->all());
+
+        return redirect()->route('admin.categories.edit',$category)->with('info','la categoria se actualizó con exito');
+
     }
 
     /**
@@ -81,6 +107,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('admin.categories.index',$category)->with('info','la categoria se eliminó con exito');
+
     }
 }

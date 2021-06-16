@@ -80,7 +80,7 @@
 
         </div>
     </section>
-<!--suscripcion
+<!--suscripcion-->
     <section class="w-full px-4 py-6 my-32 mt-16 bg-white">
 
         <div class="block w-full px-4 pt-3 pb-4 -mx-4 from-yellow-500 via-teal-600 to-yellow-600 bg-gradient-to-r">
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-    </section>-->
+    </section>
     <x-slot name="js">
         <script>
             var botmanWidget = {

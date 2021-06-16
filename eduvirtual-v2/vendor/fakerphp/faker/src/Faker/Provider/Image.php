@@ -109,10 +109,8 @@ class Image extends Base
             // use cURL
             $fp = fopen($filepath, 'w');
             $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_FILE, $fp); //línea existente
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);//nueva línea
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);//nueva línea
-$success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;//línea existente
+            curl_setopt($ch, CURLOPT_FILE, $fp);
+            $success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;
             fclose($fp);
             curl_close($ch);
 

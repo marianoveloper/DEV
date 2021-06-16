@@ -1,18 +1,17 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Validation Language Lines
+|--------------------------------------------------------------------------
+|
+| The following language lines contain the default error messages used by
+| the validator class. Some of these rules have multiple versions such
+| as the size rules. Feel free to tweak each of these messages here.
+|
+*/
+
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Validation Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines contain the default error messages used by
-    | the validator class. Some of these rules have multiple versions such
-    | as the size rules. Feel free to tweak each of these messages here.
-    |
-     */
-
     'accepted'             => 'Ruangan ini mesti diterima pakai.',
     'active_url'           => 'URL ini adalah tidak sah.',
     'after'                => 'Tarikh mesti tarikh selepas :date.',
@@ -21,13 +20,14 @@ return [
     'alpha_dash'           => 'Ruangan ini boleh mengandungi huruf, nombor, dan sengkang.',
     'alpha_num'            => 'Ruangan ini boleh mengandungi huruf dan nombor.',
     'array'                => 'Ruangan ini mesti jujukan.',
+    'attached'             => 'This field is already attached.',
     'before'               => 'Ruangan ini mesti tarikh sebelum :date.',
     'before_or_equal'      => 'Ruangan ini mesti tarikh sebelum atau bersamaan :date.',
     'between'              => [
-        'numeric' => 'Ruangan ini mesti mengandungi antara :min dan :max.',
-        'file'    => 'Ruangan ini mesti mengandungi antara :min dan :max kilobait.',
-        'string'  => 'Ruangan ini mesti mengandungi antara :min dan :max aksara.',
         'array'   => 'Ruangan ini mesti mengandungi antara :min dan :max perkara.',
+        'file'    => 'Ruangan ini mesti mengandungi antara :min dan :max kilobait.',
+        'numeric' => 'Ruangan ini mesti mengandungi antara :min dan :max.',
+        'string'  => 'Ruangan ini mesti mengandungi antara :min dan :max aksara.',
     ],
     'boolean'              => 'Ruangan ini mesti benar atau salah.',
     'confirmed'            => 'Pengesahan yang tidak sepadan.',
@@ -45,16 +45,16 @@ return [
     'file'                 => 'Ruangan ini mesti fail yang sah.',
     'filled'               => 'Ruangan ini mesti mempunyai nilai.',
     'gt'                   => [
-        'numeric' => 'Nilai mesti melebihi :value.',
-        'file'    => 'Saiz fail mesti melebihi :value kilobait.',
-        'string'  => 'Rentetan mesti melebihi :value aksara.',
         'array'   => 'Jujukan mesti mengandungi lebih daripada :value perkara.',
+        'file'    => 'Saiz fail mesti melebihi :value kilobait.',
+        'numeric' => 'Nilai mesti melebihi :value.',
+        'string'  => 'Rentetan mesti melebihi :value aksara.',
     ],
     'gte'                  => [
-        'numeric' => 'Nilai mesti melebihi atau bersamaan :value.',
-        'file'    => 'Saiz fail mesti melebihi atau bersamaan :value kilobait.',
-        'string'  => 'Rentetan mesti melebihi atau bersamaan :value aksara.',
         'array'   => 'Jujukan mesti mengandungi :value perkara atau lebih.',
+        'file'    => 'Saiz fail mesti melebihi atau bersamaan :value kilobait.',
+        'numeric' => 'Nilai mesti melebihi atau bersamaan :value.',
+        'string'  => 'Rentetan mesti melebihi atau bersamaan :value aksara.',
     ],
     'image'                => 'Nilai mesti imej.',
     'in'                   => 'Pilihan tidak sah.',
@@ -65,30 +65,30 @@ return [
     'ipv6'                 => 'Nilai mesti alamat IPv6 yang sah.',
     'json'                 => 'Nilai mesti rentetan JSON yang sah.',
     'lt'                   => [
-        'numeric' => 'Nilai mesti kurang daripada :value.',
-        'file'    => 'Saiz fail mesti kurang daripada :value kilobait.',
-        'string'  => 'Rentetan mesti kurang daripada :value aksara.',
         'array'   => 'Jujukan mesti mengandungi kurang daripada :value perkara.',
+        'file'    => 'Saiz fail mesti kurang daripada :value kilobait.',
+        'numeric' => 'Nilai mesti kurang daripada :value.',
+        'string'  => 'Rentetan mesti kurang daripada :value aksara.',
     ],
     'lte'                  => [
-        'numeric' => 'Nilai mesti kurang daripada atau bersamaan dengan :value.',
-        'file'    => 'Saiz fail mesti kurang daripada atau bersamaan dengan :value kilobait.',
-        'string'  => 'Rentetan mesti kurang daripada atau bersamaan dengan :value aksara.',
         'array'   => 'Jujukan mesti mengandungi kurang daripada atau bersamaan dengan :value perkara.',
+        'file'    => 'Saiz fail mesti kurang daripada atau bersamaan dengan :value kilobait.',
+        'numeric' => 'Nilai mesti kurang daripada atau bersamaan dengan :value.',
+        'string'  => 'Rentetan mesti kurang daripada atau bersamaan dengan :value aksara.',
     ],
     'max'                  => [
-        'numeric' => 'Nilai mesti tidak melebihi :max.',
-        'file'    => 'Saiz fail mesti tidak melebihi :max kilobait.',
-        'string'  => 'Rentetan mesti tidak melebihi :max aksara.',
         'array'   => 'Jujukan mesti tidak melebihi :max perkara.',
+        'file'    => 'Saiz fail mesti tidak melebihi :max kilobait.',
+        'numeric' => 'Nilai mesti tidak melebihi :max.',
+        'string'  => 'Rentetan mesti tidak melebihi :max aksara.',
     ],
     'mimes'                => 'Fail ini mesti berjenis: :values.',
     'mimetypes'            => 'Fail ini mesti berjenis: :values.',
     'min'                  => [
-        'numeric' => 'Nilai mesti sekurang-kurangnya :min.',
-        'file'    => 'Saiz fail mesti sekurang-kurangnya :min kilobait.',
-        'string'  => 'Rentetan mesti sekurang-kurangnya :min aksara.',
         'array'   => 'Jujukan mesti sekurang-kurangnya :min perkara.',
+        'file'    => 'Saiz fail mesti sekurang-kurangnya :min kilobait.',
+        'numeric' => 'Nilai mesti sekurang-kurangnya :min.',
+        'string'  => 'Rentetan mesti sekurang-kurangnya :min aksara.',
     ],
     'multiple_of'          => 'The value must be a multiple of :value',
     'not_in'               => 'Pilihan tidak sah.',
@@ -96,7 +96,11 @@ return [
     'numeric'              => 'Nilai mesti nombor.',
     'password'             => 'Kata laluan tidak sah.',
     'present'              => 'Ruangan ini mesti wujud.',
+    'prohibited'           => 'This field is prohibited.',
+    'prohibited_if'        => 'This field is prohibited when :other is :value.',
+    'prohibited_unless'    => 'This field is prohibited unless :other is in :values.',
     'regex'                => 'Format tidak sah.',
+    'relatable'            => 'This field may not be associated with this resource.',
     'required'             => 'Ruangan ini diperlukan.',
     'required_if'          => 'Ruangan ini diperlukan bila :other sama dengan :value.',
     'required_unless'      => 'Ruangan ini diperlukan sekiranya :other ada dalam :values.',
@@ -106,10 +110,10 @@ return [
     'required_without_all' => 'Ruangan ini diperlukan bila kesemua :values wujud.',
     'same'                 => 'Nilai ruangan ini mesti salah satu nilai di :other.',
     'size'                 => [
-        'numeric' => 'Saiz nilai mesti :size.',
-        'file'    => 'Saiz fail mesti :size kilobait.',
-        'string'  => 'Saiz rentetan mesti :size aksara.',
         'array'   => 'Saiz jujukan mesti mengandungi :size perkara.',
+        'file'    => 'Saiz fail mesti :size kilobait.',
+        'numeric' => 'Saiz nilai mesti :size.',
+        'string'  => 'Saiz rentetan mesti :size aksara.',
     ],
     'starts_with'          => 'Nilai mesti bermula dengan salah satu dari: :values.',
     'string'               => 'Nilai mesti jujukan.',
@@ -118,22 +122,10 @@ return [
     'uploaded'             => 'Muat naik gagal.',
     'url'                  => 'Format ini tidak sah.',
     'uuid'                 => 'UUID tidak sah.',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Custom Validation Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify custom validation messages for attributes using the
-    | convention "attribute.rule" to name the lines. This makes it quick to
-    | specify a specific custom language line for a given attribute rule.
-    |
-    */
-
-    'custom' => [
+    'custom'               => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
     ],
-
+    'attributes'           => [],
 ];

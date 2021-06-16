@@ -1,19 +1,17 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Pagination Language Lines
+|--------------------------------------------------------------------------
+|
+| The following language lines are used by the paginator library to build
+| the simple pagination links. You are free to change them to anything
+| you want to customize your views to better match your application.
+|
+*/
+
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Sayfalama Dil Satırları
-    |--------------------------------------------------------------------------
-    |
-    | Aşağıdaki dil satırları sayfalandırma kütüphanesi tarafından basit sayfalandırma
-    | bağlantıları oluşturmak için kullanılır. Bu satırları uygulamanızın tasarımsal
-    | ihtiyaçları ile eşleşecek şekilde, dilediğiniz gibi, değiştirebilirsiniz.
-    |
-    */
-
-    'previous' => '&laquo; Öncekiler',
     'next'     => 'Sonrakiler &raquo;',
-
+    'previous' => '&laquo; Öncekiler',
 ];

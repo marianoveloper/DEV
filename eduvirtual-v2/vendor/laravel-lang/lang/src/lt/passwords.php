@@ -1,17 +1,17 @@
 <?php
 
-return [
-    /*
-    |--------------------------------------------------------------------------
-    | Slaptažodžio priminimo kalbos eilutės
-    |--------------------------------------------------------------------------
-    |
-    | Sekančios kalbos eilutės yra numatytos elutės, atitinkančios priežastims,
-    | pateikiamoms slatažodžių tarpininko, kai nepavyksta slaptažodžio atnaujinimo
-    | bandymas, tokioms kaip negaliojanti žymė ar neteisingas naujas slaptažodis..
-    |
-    */
+/*
+|--------------------------------------------------------------------------
+| Password Reset Language Lines
+|--------------------------------------------------------------------------
+|
+| The following language lines are the default lines which match reasons
+| that are given by the password broker for a password update attempt
+| has failed, such as for an invalid token or invalid new password.
+|
+*/
 
+return [
     'reset'     => 'Nustatytas naujas slaptažodis!',
     'sent'      => 'Naujo slaptažodžio nustatymo nuoroda išsiųsta',
     'throttled' => 'Palaukite prieš tęsdami.',

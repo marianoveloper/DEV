@@ -1,17 +1,17 @@
 <?php
 
-return [
-    /*
-    |--------------------------------------------------------------------------
-    | Puslapiavimo kalbos eilutės
-    |--------------------------------------------------------------------------
-    |
-    | Šios kalbos eilutės yra naudojamas puslapiavimo bibliotekos kurti
-    | paprastas puslapiavimo nuorodas. Jūs galite laisvai keisti jas
-    | į bet kokias kitas labiau tinkančias Jūsų programai.
-    |
-    */
+/*
+|--------------------------------------------------------------------------
+| Pagination Language Lines
+|--------------------------------------------------------------------------
+|
+| The following language lines are used by the paginator library to build
+| the simple pagination links. You are free to change them to anything
+| you want to customize your views to better match your application.
+|
+*/
 
-    'previous' => '&laquo; Ankstesnis',
+return [
     'next'     => 'Kitas &raquo;',
+    'previous' => '&laquo; Ankstesnis',
 ];
