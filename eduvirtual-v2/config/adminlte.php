@@ -230,23 +230,16 @@ return [
 
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+
+
         [
             'text'        => 'Dashboard',
             'url'         => 'admin/home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
-            
-            
+
+
         ],
-       
+
         [
             'text'        => 'Lista de Roles',
             'route'         => 'admin.roles.index',
@@ -263,13 +256,18 @@ return [
             'active'    => ['admin/users*'],
 
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'OPCIONES DE CURSOS'],
         [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fas fa-fw fa-cogs',
         ],
-        
+        [
+            'text' => 'Subcategorias',
+            'route'  => 'admin.types.index',
+            'icon' => 'fas fa-fw fa-chart-line',
+        ],
+
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',

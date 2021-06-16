@@ -12,15 +12,15 @@
 <div class="alert alert-success">
 {{session('info')}}
 </div>
-    
+
 @endif
      .<div class="card">
         <div class="card-body">
-          {!! Form::open(['route'=>['admin.categories.update',$category],'method'=>'put']) !!}
+          {!! Form::model($category,['route'=>['admin.categories.update',$category],'method'=>'put']) !!}
           <div class="form-group">
                {!! Form::label('name','Nombre') !!}
               {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de la categoria']) !!}
-             
+
              @error('name')
                  <span class="text-danger">{{$message}}</span>
              @enderror

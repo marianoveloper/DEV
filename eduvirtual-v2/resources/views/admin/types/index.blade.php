@@ -3,11 +3,15 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<a class="float-right btn btn-secondary btn-sm" href="{{route('admin.types.create')}}">Nueva categoría</a>
+<a class="float-right btn btn-secondary btn-sm" href="{{route('admin.types.create')}}">Nueva Subcategoría</a>
     <h1>Lista de Subcategorias</h1>
 @stop
 
 @section('content')
+@if(session('info'))
+<div class="alert alert-success">
+{{session('info')}}
+</div>
    <div class="card">
        <div class="card-body">
            <table class="table table-striped">
@@ -31,7 +35,7 @@
                         <a class="btn btn-primary btn-sm" href="{{route('admin.types.edit', $type)}}">Editar</a>
                     </td>
                     <td width="10px">
-                        <form method="Post" action="{{route('admin.types.destroy', $type)}}">
+                        <form method="POST" action="{{route('admin.types.destroy', $type)}}">
                             @csrf
                             @method('delete')
 

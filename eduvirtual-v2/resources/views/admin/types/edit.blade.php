@@ -16,7 +16,7 @@
 @endif
      .<div class="card">
         <div class="card-body">
-          {!! Form::open(['route'=>['admin.types.update',$type],'method'=>'put']) !!}
+          {!! Form::model($type,['route'=>['admin.types.update',$type],'method'=>'put']) !!}
           <div class="form-group">
                {!! Form::label('name','Nombre') !!}
               {!! Form::text('name', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de la Subcategoria']) !!}
