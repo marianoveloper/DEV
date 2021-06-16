@@ -52,6 +52,7 @@ class CourseController extends Controller
             'link_inscription'=>'required',
             'category_id'=> 'required',
             'type_id'=> 'required',
+            'file'=>'image',
 
         ]);
 
@@ -112,6 +113,7 @@ class CourseController extends Controller
             'link_inscription'=>'required',
             'category_id'=> 'required',
             'type_id'=> 'required',
+            'file'=>'image',
 
         ]);
 $course->update($request->all());

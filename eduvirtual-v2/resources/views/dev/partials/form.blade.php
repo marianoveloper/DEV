@@ -82,6 +82,9 @@
             repudiandae, pariatur deleniti iusto officiis sed recusandae quia. Explicabo ab
             consequatur inventore maxime nesciunt, aliquam ut nam accusamus et cumque?
         </p>
-        {!! Form::file('file', ['class'=> 'form-input w-full','id'=>'file']) !!}
+        {!! Form::file('file', ['class'=> 'form-input w-full'. ($errors->has('file')? 'border-red-600': ''),'id'=>'file','accept'=>'image/*']) !!}
+        @error('file')
+        <strong class="text-xs text-red-600">{{$message}}</strong>
+    @enderror
     </div>
 </div>
