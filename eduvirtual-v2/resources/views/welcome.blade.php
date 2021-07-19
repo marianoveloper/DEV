@@ -63,7 +63,7 @@
         <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
         <div class="flex justify-center mt-4">
             <a href="{{route('courses.index')}}"
-            class="block px-4 py-2 mt-4 font-bold text-center text-yellow-500 bg-green-800 rounded hover:bg-green-900">
+            class="block px-4 py-2 mt-4 font-bold text-center text-white bg-green-800 rounded hover:bg-green-900">
           Catálogo de Propuestas
         </a>
             </div>
@@ -80,38 +80,16 @@
 
         </div>
     </section>
-<!--suscripcion-->
-    <section class="w-full px-4 py-6 my-32 mt-16 bg-white">
 
-        <div class="block w-full px-4 pt-3 pb-4 -mx-4 from-yellow-500 via-teal-600 to-yellow-600 bg-gradient-to-r">
-            <div class="max-w-xl mx-auto">
-                <h2 class="inline-block text-xl font-semibold text-left text-green-900">Suscribite y recibí novedades
-                </h2>
-                <p class="pl-px text-xs text-green-800">
-                    Te enviaremos por email información sobre nuevos cursos, carreras y posgrados online
-                </p>
-                <form action="#" class="mt-2">
-                    <div class="flex items-center">
-                        <input type="email"
-                            class="w-full px-2 py-4 mr-2 bg-gray-100 border border-gray-400 rounded-md shadow-inner focus:outline-none"
-                            required>
-                        <button class="px-5 py-2 text-white bg-green-800 rounded shadow "
-                            style="margin-left: -7.8rem;">Suscribite</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </section>
     <x-slot name="js">
         <script>
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',
                 title:"Uccuyo Virtual",
-                 introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
+                 introMessage: ' Hola ✋ a Uccuyo Virtual En que podemos ayudarte?',
                  mainColor: '#fd9807',
                  bubbleBackground:'#fd9807',
-                 bubbleAvatarUrl:'../images/chatbot2.png',
+                 bubbleAvatarUrl:'../images/chatbot4.png',
                  placeholderText: 'Ingresa tu consulta',
                  aboutLink: 'www.evirtualsj.com',
                  aboutText: 'DEV Uccuyo',

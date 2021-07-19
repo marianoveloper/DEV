@@ -13,9 +13,9 @@
     ];
 @endphp
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow ">
     <!-- Primary Navigation Menu -->
-    <div class="container">
+    <div class="container ">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Payment;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,7 @@ class CreatePaymentsTable extends Migration
             $table->string('cbu_transfer')->nullable();//cbu
             $table->string('dolar_value')->nullable();//valor del dolar
             $table->string('payment_others')->nullable();//otros pagos
+            $table->enum('status_link',[Payment::Inscripcion,Payment::PreInscripcion])->default(Payment::PreInscripcion);//BOTON DE INSC O PRE
             $table->timestamps();
         });
     }

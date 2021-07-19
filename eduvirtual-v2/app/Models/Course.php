@@ -18,8 +18,7 @@ class Course extends Model
     const Proximamente=5;//visible sin inscripcion o pre-inscripcion con fecha proxima abrir
     const Finalizado=6;//visible
     const Nuevo=7;//no visible
-    const Inscripcion=8;//Boton inscripcion
-    const PreInscripcion=9;// Boton Pre-Inscripcion
+
 
 /***query scopes********************* */
 public function scopeCategory($query,$category_id){
@@ -32,6 +31,13 @@ public function scopeType($query,$type_id){
 
     if($type_id){
         return $query->where('type_id',$type_id);
+    }
+}
+
+public function scopeStatus($query,$status){
+
+    if($status){
+        return $query->where('status',$status);
     }
 }
 public function getRouteKeyName(){
@@ -62,7 +68,7 @@ public function getRouteKeyName(){
         return $this->belongsTo('App\Models\Sede');
 
     }
-//relacion academica con curso 
+//relacion academica con curso
     public function academic(){
         return $this->hasManyThrough('App\Models\Academic','App\Models\Sede');
 

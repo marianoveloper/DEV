@@ -22,16 +22,14 @@ class CreateCoursesTable extends Migration
             $table->string('destination');//destinario
             $table->string('scope_title')->nullable();//alcance del titulo
             $table->string('hours')->nullable();//horas del curso-carrera
-            $table->string('duration')->nullable();//duracion
+            $table->string('duration');//duracion
             $table->string('quota')->nullable();//cupo
             $table->date('date_start');//fecha inicio
-            $table->date('date_limit')->nullable();//fecha limite de inscripcion
+            $table->date('date_limit');//fecha limite de inscripcion
             $table->string('url_info');//informativo
             $table->string('link_inscription');//link intra/siu/form
             $table->string('link_preinscription')->nullable();//link form / email
-            $table->enum('status',[Course::Borrador,Course::Revision,Course::Publicado])->default(Course::Borrador);//ESTADO DEL CURSO
-            $table->enum('status_course',[Course::Activo,Course::Proximamente,Course::Finalizado,Course::Nuevo])->nullable();//ESTADO DEL CURSO
-            $table->enum('status_link',[Course::Inscripcion,Course::PreInscripcion])->nullable();//BOTON DE INSC O PRE
+            $table->enum('status',[Course::Borrador,Course::Revision,Course::Publicado,Course::Proximamente,Course::Finalizado])->default(Course::Borrador);//ESTADO DEL CURSO
             $table->string('slug');//direccion
 
 
@@ -41,14 +39,14 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('category_id')->nullable();//CATEGORIA QUE PERTENECE
             $table->unsignedBigInteger('payment_id')->nullable();//PAGOS
             $table->unsignedBigInteger('sede_id')->nullable();
-           
+
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('type_id')->references('id')->on('types')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->foreign('payment_id')->references('id')->on('payments')->onDelete('set null');
             $table->foreign('sede_id')->references('id')->on('sedes')->onDelete('set null');
-           
+
 
 
             $table->timestamps();
