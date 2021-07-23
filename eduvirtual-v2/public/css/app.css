@@ -33570,8 +33570,8 @@ div.loading-dots {
 
 div.loading-dots .dot {
   display: inline-block;
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
   margin-right: 2px;
   border-radius: 50%;
   background: #196eb4;

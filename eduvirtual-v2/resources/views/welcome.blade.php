@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <section class="bg-cover" style="background-image: url({{asset('images/homes/portada-2.png')}})">
+    <section class="bg-cover" style="background-image: url({{asset('images/homes/portada-2b.png')}})">
         <div class="px-4 max-w-7x1 max-auto sm:px-6 lg:px-8 py-36">
             <div class="w-full md:w-3/4 lg:w-1/2">
                 <h1 class="text-4xl text-green-900">Estudiá Online en la Uccuyo </h1>
@@ -37,7 +37,7 @@
 
                 </figure>
                 <header class="mt-2">
-                    <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> Diplomaturas y Especializaciones </h1>
+                    <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline cu"> Diplomaturas y Especializaciones </h1>
                 </header>
                 </a>
             </article>
