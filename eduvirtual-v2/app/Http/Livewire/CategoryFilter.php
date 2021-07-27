@@ -9,18 +9,24 @@ use Livewire\WithPagination;
 
 class CategoryFilter extends Component
 {
-
-    public $category,$types;
+    use WithPagination;
+    public $category;
+    public $view = "grid";
 
     public function render()
     {
+        $types= Type::all();
 
         $courses= $this->category->courses()->where('status',3)->paginate(8);
-        return view('livewire.category-filter',compact('courses'));
+        return view('livewire.category-filter',compact('courses','types'));
     }
 
-    public function resetFilters(){
+  public function limpiar(){
+        $this->reset(['type','page']);
+    }
 
-        $this->reset(['category_id'],['type_id']);
+
+    public function updatedSubcategoria(){
+        $this->resetPage();
     }
 }

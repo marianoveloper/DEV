@@ -24,7 +24,7 @@
                  introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
                  mainColor: '#fd9807',
                  bubbleBackground:'#fd9807',
-                 bubbleAvatarUrl:'../images/chatbot3.png',
+                 bubbleAvatarUrl:'../images/chatbot4.png',
                  placeholderText: 'Ingresa tu consulta',
                  aboutLink: 'www.evirtualsj.com',
                  aboutText: 'DEV Uccuyo',
