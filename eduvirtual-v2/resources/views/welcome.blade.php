@@ -61,7 +61,7 @@
 
     </section>
 
-    <section class="py-16 mt-20" style="background-image: url({{asset('images/homes/barra.png')}})">
+    <section class="py-12 mt-20" style="background-image: url({{asset('images/homes/barra.png')}})">
         <h1 class="text-3xl text-center text-white">¿No sabes que Estudiar?</h1>
         <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
         <div class="flex justify-center mt-4">

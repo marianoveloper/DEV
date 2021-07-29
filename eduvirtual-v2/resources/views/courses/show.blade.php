@@ -31,7 +31,7 @@
                 <p class="mb-2 text-gray-500 text-md">Duracion: 3 meses </p>
                 <a href="{{route('courses.show', $course)}}"
                     class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
-                    Inscripcion
+                    PreInscripcion
                 </a>
                 <a href="{{$course->url_info}}"
                     class="block px-8 py-3 mt-4 text-center text-green-900 border border-green-900 rounded hover:border-white hover:bg-yellow-500 hover:text-white">Informativo</a>
@@ -199,7 +199,7 @@
                 introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
                 mainColor: '#fd9807',
                 bubbleBackground: '#fd9807',
-                bubbleAvatarUrl: '../images/chatbot3.png',
+                bubbleAvatarUrl: '../images/chatbot4.png',
                 placeholderText: 'Ingresa tu consulta',
                 aboutLink: 'www.evirtualsj.com',
                 aboutText: 'DEV Uccuyo',

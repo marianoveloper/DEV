@@ -1,31 +1,5 @@
 @props(['course'])
-<!--<li class="mb-2 bg-white rounded-lg shadow">
 
-        <article class="flex">
-            <figure>
-                <img class="object-cover object-center w-56 h-48" src="{{Storage::url($course->image->url)}}" alt="">
-            </figure>
-            <div class="flex flex-col flex-1 px-6 py-4">
-                <div class="flex justify-between">
-                    <div>
-                        <h3 class="mb-2 text-xl leading-6 text-gray-700">{{Str::limit($course->title,40)}}</h3>
-                <p class="mb-2 text-sm text-gray-700">Inicio: {{$course->date_start}}</p>
-                <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->payment->value}}</p>
-            </div>
-
-
-                    <x-danger-enlace href="{{route('courses.show', $course)}}">
-                        Más información
-                    </x-danger-enlace>
-
-
-            </div>
-
-
-
-            </div>
-</article>
-</li>-->
 <li class="mb-4 bg-white rounded-lg shadow">
     <a href="{{route('courses.show', $course)}}">
     <article class="flex">
