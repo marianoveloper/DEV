@@ -22,7 +22,7 @@ class CreateCoursesTable extends Migration
             $table->string('destination');//destinario
             $table->string('scope_title')->nullable();//alcance del titulo
             $table->string('hours')->nullable();//horas del curso-carrera
-            $table->string('duration');//duracion
+            $table->string('duration')->nullable();//duracion
             $table->string('quota')->nullable();//cupo
             $table->date('date_start');//fecha inicio
             $table->date('date_limit');//fecha limite de inscripcion

@@ -23,12 +23,12 @@ class ImageFactory extends Factory
     {
         $fileName = $this->faker->numberBetween(1, 25) . '.png';
 
-       /* return [
-            'url' => "images/cursos/{$fileName}"
-        ];*/
-
         return [
-            'url' => 'courses/' . $this->faker->image('public/storage/courses', 640, 480, null, false),
+            'url' => "images/courses/{$fileName}"
         ];
+/*
+        return [
+            'url' => 'cursos/' . $this->faker->image('public/storage/courses', 640, 480, null, false),
+        ];*/
     }
 }
