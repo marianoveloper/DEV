@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Type;
+use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder
 {
@@ -16,41 +17,41 @@ class TypeSeeder extends Seeder
     {
 
         Type::create([
-            'name'=>'Tecnicatura'
+            'name'=>'Tecnicatura',
+            'slug'=>Str::slug('Tecnicatura')
         ]);
         Type::create([
-            'name'=>'Licenciatura'
+            'name'=>'Licenciatura',
+            'slug'=>Str::slug('Licenciatura')
         ]);
         Type::create([
-            'name'=>'Profesorado'
+            'name'=>'Profesorado',
+            'slug'=>Str::slug('Profesorado')
         ]);
         Type::create([
-            'name'=>'Especialización'
+            'name'=>'Especialización',
+            'slug'=>Str::slug('Especialización')
+        ]);
+        Type::create([
+            'name'=>'Maestría',
+            'slug'=>Str::slug('Maestría')
+        ]);
+        Type::create([
+            'name'=>'Doctorado',
+            'slug'=>Str::slug('Licenciatura')
+        ]);
+        Type::create([
+            'name'=>'Diplomatura',
+            'slug'=>Str::slug('Diplomatura')
+        ]);
+        Type::create([
+            'name'=>'Actualización',
+            'slug'=>Str::slug('Actualización')
+        ]);
+        Type::create([
+            'name'=>'Taller',
+            'slug'=>Str::slug('Taller')
+        ]);
 
-        ]);
-        Type::create([
-            'name'=>'Maestría'
-        ]);
-        Type::create([
-            'name'=>'Doctorado'
-        ]);
-        Type::create([
-            'name'=>'Diplomatura'
-        ]);
-        Type::create([
-            'name'=>'Actualización'
-        ]);
-        Type::create([
-            'name'=>'Taller'
-        ]);
-        Type::create([
-            'name'=>'Posgrado'
-        ]);
-        Type::create([
-            'name'=>'Grado'
-        ]);
-        Type::create([
-            'name'=>'PreGrado'
-        ]);
     }
 }

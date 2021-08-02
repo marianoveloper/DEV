@@ -38,7 +38,9 @@ class CourseFactory extends Factory
             'subtitle'=>  $this->faker->sentence(),
             'description' => $this->faker->paragraph(5),
             'destination' =>  $this->faker->sentence(),
+
             'date_start' =>$this->faker->date(),
+            'date_limit' =>$this->faker->date(),
             'url_info' => $this->faker->url(),
             'status' =>  $this->faker->randomElement([Course::Borrador, Course::Revision, Course::Publicado]),
 
