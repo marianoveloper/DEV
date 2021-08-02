@@ -5,7 +5,7 @@
 
     <button type="submit"
         class="absolute top-0 right-0 px-4 py-2 mt-2 font-bold bg-yellow-500 rounded hover:bg-yellow-700">
-        Buscar
+        <x-search size="21" color="white" />
     </button>
     @if($search)
 
