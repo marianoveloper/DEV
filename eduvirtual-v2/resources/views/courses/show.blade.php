@@ -44,7 +44,7 @@
 
 
                 <h1 class="mb-2 text-3xl font-bold">Presentación</h1>
-                <div class="text-base text-gray-700">{{$course->description}}</div>
+                <div class="text-base text-gray-700">{!! html_entity_decode($course->description) !!}</div>
 
 
             </section>
@@ -192,6 +192,7 @@
 
 
     <x-slot name="js">
+
         <script>
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',

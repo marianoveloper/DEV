@@ -184,5 +184,9 @@ return [
         'title'                 => 'título',
         'username'              => 'usuario',
         'year'                  => 'año',
+        'url_info'              => 'link del informativo',
+        'date_start'            => 'fecha de inicio',
+        'date_limit'            => 'fecha limite',
+        'destination'           => 'destinatario',
     ],
 ];

@@ -26,7 +26,7 @@
     </div>
 
     <x-slot name="js">
-        <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
 
         <script src="{{asset('js/dev/courses/form.js')}}"></script>
         </x-slot-name>

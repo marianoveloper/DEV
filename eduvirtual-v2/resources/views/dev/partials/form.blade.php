@@ -31,10 +31,34 @@
 @enderror
 </div>
 <div class="mb-4">
+    {!! Form::label('duration', 'Duración') !!}
+    {!! Form::text('duration', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('duration')? 'border-red-600': '')]) !!}
+
+    @error('duration')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
     {!! Form::label('date_start', 'Fecha de Inicio') !!}
-{!! Form::date('date_start', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
+{!! Form::date('date_start',\Carbon\Carbon::now(), ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
 
     @error('date_start')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
+    {!! Form::label('date_limit', 'Fecha Limite') !!}
+{!! Form::date('date_limit', \Carbon\Carbon::now(), ['class'=>'form-input block w-full mt-1'. ($errors->has('date_limit')? 'border-red-600': '')]) !!}
+
+    @error('date_limit')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+@enderror
+</div>
+<div class="mb-4">
+    {!! Form::label('price', 'Precio') !!}
+    {!! Form::number('price', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('price')? 'border-red-600': '')]) !!}
+
+    @error('price')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>

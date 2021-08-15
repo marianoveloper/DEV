@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 class CourseController extends Controller
 {
     /**
@@ -47,19 +48,22 @@ class CourseController extends Controller
             'slug'=> 'required|unique:courses',
             'description'=> 'required',
             'destination'=>'required',
-            'date_start'=>'required',
-            'url_info'=>'required',
-            'link_inscription'=>'required',
+            'duration'=> 'required',
+            'date_start'=>'required|date|after:tomorrow',
+            'date_limit'=>'required|date|after:date_start',
+            'url_info'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
+            'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
             'file'=>'image',
+            'price'=>'required',
 
         ]);
 
         $course=Course::create($request->all());
 
         if($request->file('file')){
-            $url=Storage::put('courses', $request->file('file'));
+            $url=Storage::put('public/courses', $request->file('file'));
         }
 
         $course->image()->create([
@@ -108,9 +112,10 @@ class CourseController extends Controller
             'slug'=> 'required|unique:courses,slug,'.$course->id,
             'description'=> 'required',
             'destination'=>'required',
-            'date_start'=>'required',
-            'url_info'=>'required',
-            'link_inscription'=>'required',
+            'date_start'=>'required|date|after:tomorrow',
+            'date_limit'=>'required|date|after:date_start',
+            'url_info'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
+            'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
             'file'=>'image',
@@ -119,7 +124,7 @@ class CourseController extends Controller
 $course->update($request->all());
 
 if($request->file('file')){
-    $url=Storage::put('courses',$request->file('file'));
+    $url=Storage::put('public/courses',$request->file('file'));
 
     if($course->image){
         Storage::delete($course->image->url);
