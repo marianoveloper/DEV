@@ -11,7 +11,12 @@ class Type extends Model
     protected $guarded=['id'];
 
     public function courses(){
-        return $this->hasMany('App\Models\Course');
+        return $this->hasMany(Course::class);
+    }
+
+    //relacion uno a muchos inversa
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
     /**  public function getRouteKeyName(){return 'slug';} **/
 }

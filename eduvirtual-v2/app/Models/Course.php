@@ -9,15 +9,15 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id','status','status_course'];
+    protected $guarded=['id','status'];
 
     const Borrador=1;// no visible falta completar datos
     const Revision=2;//no visible falta aprobacion
     const Publicado=3;//estan visible en la pagina
-    const Activo=4;//habilitado inscripcion o pre-inscripcion
-    const Proximamente=5;//visible sin inscripcion o pre-inscripcion con fecha proxima abrir
-    const Finalizado=6;//visible
-    const Nuevo=7;//no visible
+    const Activo=1;//habilitado inscripcion o pre-inscripcion
+    const Proximamente=2;//visible sin inscripcion o pre-inscripcion con fecha proxima abrir
+    const Finalizado=3;//visible
+
 
 
 /***query scopes********************* */
@@ -78,13 +78,13 @@ public function getRouteKeyName(){
         return $this->belongsTo('App\Models\Payment');
 
     }
-
+/*
     public function category(){
         return $this->belongsTo('App\Models\Category');
 
-    }
+    }*/
     public function type(){
-        return $this->belongsTo('App\Models\Type');
+        return $this->belongsTo(Type::class);
 
     }
 

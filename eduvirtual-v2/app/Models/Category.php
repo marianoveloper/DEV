@@ -11,8 +11,13 @@ class Category extends Model
 
     protected $guarded=['id'];
 
+    //Relacion uno a muchos
+    public function types(){
+        return $this->hasMany(Type::class);
+    }
+
     public function courses(){
-        return $this->hasMany('App\Models\Course');
+        return $this->hasManyThrough(Course::class, Type::class);
     }
 
     public function getRouteKeyName(){return 'slug';}

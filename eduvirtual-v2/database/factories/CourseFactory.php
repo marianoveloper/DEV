@@ -43,7 +43,7 @@ class CourseFactory extends Factory
             'date_limit' =>$this->faker->date(),
             'url_info' => $this->faker->url(),
             'status' =>  $this->faker->randomElement([Course::Borrador, Course::Revision, Course::Publicado]),
-
+            'status_course' =>  $this->faker->randomElement([Course::Activo, Course::Proximamente, Course::Finalizado]),
 
             'link_inscription'=>$this->faker->url(),
             'slug' => Str::slug($title),
