@@ -78,6 +78,9 @@
             @livewire('category-courses')
         </section>
     </div>
+
+
+
     <x-slot name="js">
         <script>
   new Glider(document.querySelector('.glider'), {

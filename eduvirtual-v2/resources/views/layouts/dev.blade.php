@@ -20,7 +20,6 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
 
-        <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js" integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body class="font-sans antialiased">
@@ -39,9 +38,22 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="container grid grid-cols-5 py-8">
+                <aside>
+                    <h1 class="mb-4 text-lg font-bold">Edición del Curso</h1>
+                    <ul class="text-sm text-gray-600">
+                        <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.edit',$course) border-indigo-400 @else border-transparent  @endif"><a href="{{route('dev.courses.edit',$course)}}">Información del Curso</a></li>
+                        <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.curriculum',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.curriculum',$course)}}">Presentación</a></li>
+                        <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.goals',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.goals',$course)}}">Objetivos</a></li>
+                    </ul>
+                </aside>
+
+                <div class="col-span-4 card">
+                    <main class="text-gray-600 card-body">
+                        {{$slot}}
+                    </main>
+                </div>
+            </div>
 
         </div>
         <x-footer/>

@@ -56,7 +56,7 @@ class CourseController extends Controller
             'category_id'=> 'required',
             'type_id'=> 'required',
             'file'=>'image',
-            'price'=>'required',
+            'price'=>'required|numeric',
 
         ]);
 
@@ -69,6 +69,9 @@ class CourseController extends Controller
         $course->image()->create([
             'url'=>$url,
         ]);
+
+
+
 
       return redirect()->route('dev.courses.edit', $course);
     }
@@ -119,6 +122,7 @@ class CourseController extends Controller
             'category_id'=> 'required',
             'type_id'=> 'required',
             'file'=>'image',
+            'price'=>'required',
 
         ]);
 $course->update($request->all());
@@ -152,5 +156,10 @@ return redirect()->route('dev.courses.edit',$course);
     public function destroy(Course $course)
     {
         //
+    }
+
+    public function goals(Course $course){
+
+        return view('dev.courses.goals',compact('course'));
     }
 }

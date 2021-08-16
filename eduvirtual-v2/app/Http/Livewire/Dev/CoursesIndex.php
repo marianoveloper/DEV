@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class CoursesIndex extends Component
 {
     use WithPagination;
-
+    protected $paginationTheme='bootstrap';
     public $search;
 
     public function render()

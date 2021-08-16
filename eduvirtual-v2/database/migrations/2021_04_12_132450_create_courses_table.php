@@ -26,6 +26,7 @@ class CreateCoursesTable extends Migration
             $table->string('quota')->nullable();//cupo
             $table->date('date_start');//fecha inicio
             $table->date('date_limit');//fecha limite de inscripcion
+            $table->integer('price');
             $table->string('url_info');//informativo
             $table->string('link_inscription');//link intra/siu/form
             $table->string('link_preinscription')->nullable();//link form / email
