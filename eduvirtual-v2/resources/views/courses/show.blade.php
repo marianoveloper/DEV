@@ -27,9 +27,9 @@
             <div class="px-6 py-4">
 
                 <p class="mb-2 text-gray-500 text-md">Inicio: {{$course->date_start}}</p>
-                <p class="mb-2 text-gray-500 text-md">Precio: ${{$course->payment->value}}</p>
+                <p class="mb-2 text-gray-500 text-md">Precio: ${{$course->price}}</p>
                 <p class="mb-2 text-gray-500 text-md">Duracion: 3 meses </p>
-                <a href="{{route('courses.show', $course)}}"
+                <a href="{{$course->link_inscription}}"
                     class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
                     PreInscripcion
                 </a>

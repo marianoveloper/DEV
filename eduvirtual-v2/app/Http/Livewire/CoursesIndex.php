@@ -16,8 +16,20 @@ class CoursesIndex extends Component
 
     public $type_id;
     public $category_id;
+/*
+public $course,$categorias;
+public $subcategoria=[];
 
+public function updatedCategoryId($value){
 
+    $category=Category::find($value);
+    $this->subcategoria=$category->types;
+
+}
+
+public function mount(){
+    $this->categorias=$this->course->category;
+}*/
 
     public function render()
     {

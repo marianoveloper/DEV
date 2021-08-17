@@ -8,7 +8,7 @@
             <div class="px-6 py-4">
                 <!--<h1 class="mb-2 text-xl leading-6 text-gray-700">{{Str::limit($course->title,40)}}</h1>-->
                 <p class="mb-2 text-sm text-gray-500">Inicio: {{$course->date_start}}</p>
-                <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->payment->value}}</p>
+                <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
 
             </div>
         </article>

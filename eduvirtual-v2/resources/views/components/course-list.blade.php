@@ -12,7 +12,7 @@
                 <div>
                     <h1 class="mb-2 text-lg font-semibold text-gray-700">{{ Str::limit($course->title,40) }}</h1>
                     <p class="mb-2 text-sm text-gray-500">Inicio: {{$course->date_start}}</p>
-                    <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->payment->value}}</p>
+                    <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
                 </div>
 
                 <div class="flex items-center">

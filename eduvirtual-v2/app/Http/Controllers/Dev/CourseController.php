@@ -30,6 +30,8 @@ class CourseController extends Controller
     {
         $categories=Category::pluck('name','id');
         $types=Type::pluck('name','id');
+
+
         return view('dev.courses.create',compact('categories','types'));
     }
 
@@ -55,7 +57,7 @@ class CourseController extends Controller
             'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
-            'file'=>'image',
+            'file'=>'required|image',
             'price'=>'required|numeric',
 
         ]);
@@ -121,7 +123,7 @@ class CourseController extends Controller
             'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
-            'file'=>'image',
+            'file'=>'required|image',
             'price'=>'required',
 
         ]);
