@@ -18,15 +18,16 @@
             <h2 class="mb-2 font-semibold text-center">Subcategorías</h2>
             <ul class="divide-y divide-gray-200">
 
-                @foreach($types as $subcategory)
+                @foreach($category->types as $subcategory)
                 <li class="py-2 text-sm ">
-                    <a class="capitalize cursor-pointer hover:text-yellow-600">{{$subcategory->name}}
+                    <a class="capitalize cursor-pointer hover:text-yellow-600 {{$subcategoria==$subcategory->slug ? 'text-yellow-500 font-semibold' : ''}}"
+                        wire:click="$set('subcategoria','{{$subcategory->slug}}')">{{$subcategory->name}}
                     </a>
                 </li>
 
                 @endforeach
             </ul>
-            <x-jet-button class="mt-4">
+            <x-jet-button class="mt-4" wire:click="limpiar">
                 Eliminar Filtro
             </x-jet-button>
         </aside>
@@ -40,7 +41,7 @@
                 <li class="md:col-span-2 lg:col-span-4">
                     <div class="relative px-4 py-3 text-red-700 bg-red-100 border border-red-400 rounded" role="alert">
                         <strong class="font-bold">Upss!</strong>
-                        <span class="block sm:inline">No existe ningún producto con ese filtro.</span>
+                        <span class="block sm:inline">No existe ningún curso con ese filtro.</span>
                     </div>
                 </li>
                 @endforelse
