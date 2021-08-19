@@ -34,7 +34,6 @@
 
                     </div>
                     <div class="hidden" id="tab-settings">
-                        <x-card-slider :course='course'>
 
                     </div>
                         <div class="hidden" id="tab-options">
