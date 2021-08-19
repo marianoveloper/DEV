@@ -39,7 +39,7 @@
 
                     </figure>
                     <header class="mt-2">
-                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline cu">
+                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline ">
                             Diplomaturas y Especializaciones </h1>
                     </header>
                 </a>
@@ -67,7 +67,7 @@
         <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
         <div class="flex justify-center mt-4">
             <a href="{{route('courses.index')}}"
-                class="block px-4 py-2 mt-4 font-bold text-center text-white bg-green-800 rounded hover:bg-green-900">
+                class="block px-4 py-2 mt-4 font-bold text-center text-white bg-green-600 rounded hover:bg-green-900">
                 Catálogo de Propuestas
             </a>
         </div>
@@ -80,44 +80,73 @@
         </section>
     </div>
 
+    <!--------------------------------------------------->
+    <div class="container py-8">
 
-
+        <h1 class="mb-6 text-3xl text-center text-green-900 ">DESTACADOS</h1>
+         @livewire('courses-tab')
+    </div>
     <x-slot name="js">
 
+        <script type="text/javascript">
+
+            function changeAtiveTab(event, tabID) {
+                let element = event.target;
+                while (element.nodeName !== "A") {
+                    element = element.parentNode;
+                }
+                ulElement = element.parentNode.parentNode;
+                aElements = ulElement.querySelectorAll("li > a");
+                tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+                for (let i = 0; i < aElements.length; i++) {
+                    aElements[i].classList.remove("text-white");
+                    aElements[i].classList.remove("bg-amber-600");
+                    aElements[i].classList.add("text-amber-600");
+                    aElements[i].classList.add("bg-white");
+                    tabContents[i].classList.add("hidden");
+                    tabContents[i].classList.remove("block");
+                }
+                element.classList.remove("text-amber-600");
+                element.classList.remove("bg-white");
+                element.classList.add("text-white");
+                element.classList.add("bg-amber-600");
+                document.getElementById(tabID).classList.remove("hidden");
+                document.getElementById(tabID).classList.add("block");
+            }
+
+        </script>
         <script>
-  new Glider(document.querySelector('.glider'), {
-  // Mobile-first defaults
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  draggable: true,
-  dots: '.dots',
-  arrows: {
-    prev: '.glider-prev',
-    next: '.glider-next'
-  },
-  responsive: [
-    {
-      // screens greater than >= 775px
-      breakpoint: 775,
-      settings: {
-        // Set to `auto` and provide item width to adjust to viewport
-        slidesToShow: 'auto',
-        slidesToScroll: 'auto',
-        itemWidth: 150,
-        duration: 0.25
-      }
-    },{
-      // screens greater than >= 1024px
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        itemWidth: 150,
-        duration: 0.25
-      }
-    }
-  ]
-});
+            new Glider(document.querySelector('.glider'), {
+                // Mobile-first defaults
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                },
+                responsive: [{
+                    // screens greater than >= 775px
+                    breakpoint: 775,
+                    settings: {
+                        // Set to `auto` and provide item width to adjust to viewport
+                        slidesToShow: 'auto',
+                        slidesToScroll: 'auto',
+                        itemWidth: 150,
+                        duration: 0.25
+                    }
+                }, {
+                    // screens greater than >= 1024px
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 1,
+                        itemWidth: 150,
+                        duration: 0.25
+                    }
+                }]
+            });
 
         </script>
         <script>

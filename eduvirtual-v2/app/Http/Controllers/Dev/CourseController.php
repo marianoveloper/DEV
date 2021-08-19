@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Dev;
 
+use Carbon\Carbon;
 use App\Models\Type;
 use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use Carbon\Carbon;
+
 class CourseController extends Controller
 {
     /**
@@ -29,10 +31,10 @@ class CourseController extends Controller
     public function create()
     {
         $categories=Category::pluck('name','id');
-        $types=Type::pluck('name','id');
+        $subcategory=Type::pluck('name','id');
 
 
-        return view('dev.courses.create',compact('categories','types'));
+        return view('dev.courses.create',compact('categories','subcategory'));
     }
 
     /**
@@ -98,9 +100,16 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         $categories=Category::pluck('name','id');
-        $types=Type::pluck('name','id');
+        $category_id=$course->type->category->id;
 
-        return view('dev.courses.edit',compact('course','categories','types'));
+        //$subcategory = DB::table('types')->where('category_id', $category_id)->pluck('name','id');
+
+        //dd($subcategory);
+
+
+        $subcategory=Type::pluck('name','id');
+
+        return view('dev.courses.edit',compact('course','categories','subcategory'));
     }
 
     /**
