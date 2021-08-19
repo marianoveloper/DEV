@@ -38,7 +38,22 @@
                             class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                             Estado
                         </th>
-
+                        <th scope="col"
+                        class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                        Fecha de Inicio
+                    </th>
+                    <th scope="col"
+                    class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                    Fecha Limite
+                </th>
+                <th scope="col"
+                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                Precio
+            </th>
+            <th scope="col"
+                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                            Curso
+                        </th>
                         <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
                         </th>
@@ -76,6 +91,7 @@
                  <div class="text-sm text-gray-900">{{$course->type->category->name}}</div>
                     <div class="text-sm text-gray-500">{{$course->type->name}}</div>
               </td>
+
             <td class="px-6 py-4 whitespace-nowrap">
                        @switch($course->status)
                                @case(1)
@@ -98,7 +114,43 @@
                         @endswitch
 
                       </td>
+  <td class="px-6 py-4 whitespace-nowrap">
 
+                 <div class="text-sm text-gray-900">{{$course->date_start}}</div>
+
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+
+                <div class="text-sm text-gray-900">{{$course->date_limit}}</div>
+
+             </td>
+             <td class="px-6 py-4 whitespace-nowrap">
+
+                <div class="text-sm text-gray-900">$ {{$course->price}}</div>
+
+             </td>
+             <td class="px-6 py-4 whitespace-nowrap">
+                @switch($course->status_course)
+                        @case(1)
+                           <span class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
+                                    Activo
+                                                 </span>
+                      @break
+                     @case(2)
+                     <span class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                         Proximamente
+                     </span>
+                     @break
+                     @case(3)
+                     <span class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+                         Finalizado
+                     </span>
+                     @break
+                     @default
+
+                 @endswitch
+
+               </td>
                  <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
                          <a href="{{route('dev.courses.edit',$course)}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                      </td>
