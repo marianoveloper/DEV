@@ -83,6 +83,7 @@
 </div>
 </div>
 <div class="grid grid-cols-3 gap-4">
+
     <div>
         {!! Form::label('category_id', 'Categoria') !!}
         {!! Form::select('category_id', $categories, null, ['class'=>'form-input block w-full mt-1'])
@@ -93,6 +94,7 @@
         {!! Form::label('subcategory_id', 'Subcategoria') !!}
         {!! Form::select('subcategory_id', $subcategory, null, ['class'=>'form-input block w-full mt-1']) !!}
     </div>
+
 
 </div>
 <h1 class="mt-8 mb-2 text-2xl font-bold">Imagen del curso</h1>

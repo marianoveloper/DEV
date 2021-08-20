@@ -38,7 +38,7 @@
             @endif
 
             <!-- Page Content -->
-            <div class="container grid grid-cols-5 py-8">
+            <div class="container grid grid-cols-5 gap-6 py-8">
                 <aside>
                     <h1 class="mb-4 text-lg font-bold">Edición del Curso</h1>
                     <ul class="text-sm text-gray-600">
@@ -47,11 +47,38 @@
                         <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.goals',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.goals',$course)}}">Objetivos</a></li>
                     </ul>
 
+                    @switch($course->status)
+                    @case(1)
+
                     <form action="{{route('dev.courses.status',$course)}}" method="POST">
                         @csrf
 
                         <button type="submit" class="btn btn-danger">Solicitar Revisión</button>
                     </form>
+                  @break
+                 @case(2)
+                 <div class="card">
+                     <div class="text-yellow-800 bg-yellow-100 card-body ">
+
+                            Este curso se encuentra en Revisión
+
+                     </div>
+                 </div>
+
+                 @break
+                 @case(3)
+                 <div class="card">
+                    <div class="text-green-800 bg-green-100 card-body">
+
+                           Este curso se encuentra Publicado
+
+                    </div>
+                </div>
+                 @break
+                 @default
+
+             @endswitch
+
                 </aside>
 
                 <div class="col-span-4 card">

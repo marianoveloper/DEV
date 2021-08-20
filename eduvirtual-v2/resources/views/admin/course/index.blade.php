@@ -8,6 +8,14 @@
 
 @section('content')
 
+@if(session('info'))
+<div class="px-4 py-3 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">
+    <p class="font-bold">{{session('info')}}!</p>
+
+  </div>
+
+@endif
+
 <div class="card">
     <div class="card-body">
         <table class="table table-striped">
@@ -27,7 +35,7 @@
                     <td>{{$course->title}}</td>
                     <td>{{$course->type->category->name}}</td>
                     <td>
-                        <a href="" class="btn btn-primary">Revisar</a>
+                        <a href="{{route('admin.course.show',$course)}}" class="btn btn-primary">Revisar</a>
                     </td>
                 </tr>
                 @endforeach

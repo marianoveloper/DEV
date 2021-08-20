@@ -59,11 +59,11 @@ class CourseController extends Controller
             'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
-            'file'=>'required|image',
+            'file'=>'image',
             'price'=>'required|numeric',
 
         ]);
-
+        dd('llego');
         $course=Course::create($request->all());
 
         if($request->file('file')){
@@ -76,7 +76,7 @@ class CourseController extends Controller
 
 
 
-
+return $course;
       return redirect()->route('dev.courses.edit', $course);
     }
 
@@ -88,7 +88,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        return view('dev.show',compact('course'));
+        return view('dev.courses.show',compact('course'));
     }
 
     /**
@@ -109,7 +109,8 @@ class CourseController extends Controller
 
         $subcategory=Type::pluck('name','id');
 
-        return view('dev.courses.edit',compact('course','categories','subcategory'));
+
+       return view('dev.courses.edit',compact('course','categories','subcategory'));
     }
 
     /**
@@ -135,6 +136,7 @@ class CourseController extends Controller
             'file'=>'image',
             'price'=>'required',
 
+
         ]);
 $course->update($request->all());
 
@@ -153,6 +155,7 @@ if($request->file('file')){
         ]);
     }
 }
+
 
 return redirect()->route('dev.courses.edit',$course);
 
@@ -177,5 +180,9 @@ return redirect()->route('dev.courses.edit',$course);
     public function status(Course $course){
 
 
+        $course->status=2;
+        $course->save();
+
+        return back();
     }
 }

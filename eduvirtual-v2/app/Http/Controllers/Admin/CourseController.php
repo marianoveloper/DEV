@@ -17,12 +17,23 @@ class CourseController extends Controller
 
     public function show(Course $course){
 
+       // $this->autorize('revision',$course);
+
         return view('admin.course.show',compact('course'));
     }
 
     public function aproved(Course $course){
 
+        if(!$course->goals || !$course->requirements || !$course->image && $course->status_course == 1 ){
+
+            return back()->with('info','No se puede publicar un curso que no este completo');
+        }
+        elseif($course->status_course==2 && !$course->image){
+            return back()->with('info','No se puede publicar un curso que no este completo');
+        }
+
         $course->status=3;
-        return "aqui se aprueba un curso";
+        $course->save();
+        return redirect()->route('admin.course.index')->with('info','la propuesta se creo correctamente');
     }
 }
