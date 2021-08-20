@@ -29,7 +29,7 @@ class CourseController extends Controller
             return back()->with('info','No se puede publicar un curso que no este completo');
         }
         elseif($course->status_course==2 && !$course->image){
-            return back()->with('info','No se puede publicar un curso que no este completo');
+            return back()->with('info','Es necesario subir como minimo una imagen');
         }
 
         $course->status=3;

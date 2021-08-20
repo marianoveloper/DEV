@@ -43,13 +43,16 @@
                     <h1 class="mb-4 text-lg font-bold">Edición del Curso</h1>
                     <ul class="text-sm text-gray-600">
                         <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.edit',$course) border-indigo-400 @else border-transparent  @endif"><a href="{{route('dev.courses.edit',$course)}}">Información del Curso</a></li>
-                        <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.curriculum',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.curriculum',$course)}}">Presentación</a></li>
+
                         <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.goals',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.goals',$course)}}">Objetivos</a></li>
                     </ul>
 
+
+
+
+
                     @switch($course->status)
                     @case(1)
-
                     <form action="{{route('dev.courses.status',$course)}}" method="POST">
                         @csrf
 
