@@ -85,7 +85,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -234,7 +234,7 @@ return [
 
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin/home',
+            'route'         => 'dev.courses.index',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
 
 
@@ -258,6 +258,11 @@ return [
         ],
         ['header' => 'OPCIONES DE CURSOS'],
         [
+            'text' => 'Pendientes de aprobación',
+            'route'  => 'admin.course.index',
+            'icon' => 'fas fa-fw fa-cogs',
+        ],
+        [
             'text' => 'Categorias',
             'route'  => 'admin.categories.index',
             'icon' => 'fas fa-fw fa-cogs',
@@ -273,44 +278,7 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
+
 
     ],
 

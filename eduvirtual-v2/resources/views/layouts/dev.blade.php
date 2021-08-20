@@ -46,6 +46,12 @@
                         <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.curriculum',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.curriculum',$course)}}">Presentación</a></li>
                         <li class="pl-2 mb-1 leading-7 border-l-4 @routeIs('dev.courses.goals',$course) border-indigo-400 @else border-transparent  @endif "><a href="{{route('dev.courses.goals',$course)}}">Objetivos</a></li>
                     </ul>
+
+                    <form action="{{route('dev.courses.status',$course)}}" method="POST">
+                        @csrf
+
+                        <button type="submit" class="btn btn-danger">Solicitar Revisión</button>
+                    </form>
                 </aside>
 
                 <div class="col-span-4 card">

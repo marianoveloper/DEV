@@ -30,6 +30,7 @@
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>
+<div class="grid grid-cols-3 gap-4">
 <div class="mb-4">
     {!! Form::label('duration', 'Duración') !!}
     {!! Form::text('duration', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('duration')? 'border-red-600': '')]) !!}
@@ -40,7 +41,7 @@
 </div>
 <div class="mb-4">
     {!! Form::label('date_start', 'Fecha de Inicio') !!}
-{!! Form::date('date_start',\Carbon\Carbon::now(), ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
+{!! Form::date('date_start',null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
 
     @error('date_start')
     <strong class="text-xs text-red-600">{{$message}}</strong>
@@ -48,12 +49,14 @@
 </div>
 <div class="mb-4">
     {!! Form::label('date_limit', 'Fecha Limite') !!}
-{!! Form::date('date_limit', \Carbon\Carbon::now(), ['class'=>'form-input block w-full mt-1'. ($errors->has('date_limit')? 'border-red-600': '')]) !!}
+{!! Form::date('date_limit', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_limit')? 'border-red-600': '')]) !!}
 
     @error('date_limit')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>
+</div>
+<div class="grid grid-cols-3 gap-4">
 <div class="mb-4">
     {!! Form::label('price', 'Precio') !!}
     {!! Form::number('price', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('price')? 'border-red-600': '')]) !!}
@@ -78,7 +81,8 @@
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>
-<div class="grid gap-4 drid-cols-3">
+</div>
+<div class="grid grid-cols-3 gap-4">
     <div>
         {!! Form::label('category_id', 'Categoria') !!}
         {!! Form::select('category_id', $categories, null, ['class'=>'form-input block w-full mt-1'])
@@ -89,6 +93,7 @@
         {!! Form::label('subcategory_id', 'Subcategoria') !!}
         {!! Form::select('subcategory_id', $subcategory, null, ['class'=>'form-input block w-full mt-1']) !!}
     </div>
+
 </div>
 <h1 class="mt-8 mb-2 text-2xl font-bold">Imagen del curso</h1>
 
@@ -102,9 +107,7 @@
     </figure>
     <div>
         <p class="mb-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi voluptas
-            repudiandae, pariatur deleniti iusto officiis sed recusandae quia. Explicabo ab
-            consequatur inventore maxime nesciunt, aliquam ut nam accusamus et cumque?
+           Cargar imagen las medidas son 350x350 en formato .png
         </p>
         {!! Form::file('file', ['class'=> 'form-input w-full'. ($errors->has('file')? 'border-red-600': ''),'id'=>'file','accept'=>'image/*']) !!}
         @error('file')

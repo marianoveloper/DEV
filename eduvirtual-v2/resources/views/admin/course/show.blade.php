@@ -36,10 +36,13 @@
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
-                                @foreach($course->goals as $goal)
+                                @forelse($course->goals as $goal)
                                 <li class="text-base text-gray-700"><i
                                         class="mr-2 text-gray-600 fas fa-check"></i>{{$goal->name}}</li>
-                                @endforeach
+                                @empty
+
+                               <li class="text-base text-gray-700">Este curso no tiene asignado ningun objetivo</li>
+                                @endforelse
 
 
                             </ul>
@@ -92,7 +95,7 @@
                                         class="mr-2 fas fa-play-circle"></i>{{$requirement->name}}</li>
 
                                 @empty
-                                <li>Sin Requisitos </li>
+                                <li>Sin Resolucion asignada</li>
                                 @endforelse
                             </ul>
                         </div>
@@ -105,8 +108,10 @@
         <div class="order-1 lg:order-2">
             <div class="card md:fixed md:right-20 md:top-20">
                 <figure >
+                    @if($course->image)
                     <img class="object-cover w-full rounded shadow-lg " src="{{Storage::url($course->image->url)}}"
                         alt="">
+                        @endif
                 </figure>
 
                 <div class="px-6 py-4">
@@ -122,29 +127,16 @@
                         class="block px-8 py-3 mt-4 text-center text-green-900 border border-green-900 rounded hover:border-white hover:bg-yellow-500 hover:text-white">Informativo</a>
                 </div>
 
+<form action="{{route('admin.course.aproved')}}" class="mt-4" method="POST">
+    @csrf
 
+    <button type="submit" class="w-full btn btn-danger">Aprobar Propuesta</button>
+</form>
             </div>
         </div>
 
     </div>
 
 
-    <x-slot name="js">
 
-        <script>
-            var botmanWidget = {
-                frameEndpoint: '/botman/chat',
-                title: "Uccuyo Virtual",
-                introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
-                mainColor: '#fd9807',
-                bubbleBackground: '#fd9807',
-                bubbleAvatarUrl: '../images/chatbot4.png',
-                placeholderText: 'Ingresa tu consulta',
-                aboutLink: 'www.evirtualsj.com',
-                aboutText: 'DEV Uccuyo',
-            };
-
-        </script>
-        <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
-    </x-slot>
 </x-app-layout>

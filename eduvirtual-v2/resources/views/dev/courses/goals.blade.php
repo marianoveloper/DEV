@@ -1,7 +1,5 @@
-<x-dev-layout>
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>
+<x-dev-layout :course="$course">
+
 
     <div class="my-8">
         @livewire('dev.courses-goals',['course'=>$course], key('courses-goals'.$course->id))

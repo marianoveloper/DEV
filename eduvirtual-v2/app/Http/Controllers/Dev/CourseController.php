@@ -100,7 +100,7 @@ class CourseController extends Controller
     public function edit(Course $course)
     {
         $categories=Category::pluck('name','id');
-        $category_id=$course->type->category->id;
+       // $category_id=$course->type->category->id;
 
         //$subcategory = DB::table('types')->where('category_id', $category_id)->pluck('name','id');
 
@@ -132,7 +132,7 @@ class CourseController extends Controller
             'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'category_id'=> 'required',
             'type_id'=> 'required',
-            'file'=>'required|image',
+            'file'=>'image',
             'price'=>'required',
 
         ]);
@@ -172,5 +172,10 @@ return redirect()->route('dev.courses.edit',$course);
     public function goals(Course $course){
 
         return view('dev.courses.goals',compact('course'));
+    }
+
+    public function status(Course $course){
+
+
     }
 }
