@@ -8,10 +8,14 @@
                 <div class="text-white ">
                     <h1 class="text-5xl">{{$course->title}}</h1>
                 </div>
-                <span
-                    class="inline-flex items-center justify-center px-2 py-1 mt-2 mr-2 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">Inscripciones
-                    Abiertas</span>
 
+                @if($course->status_course==1)
+                <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-red-600 rounded-full">Inscripciones
+                    Abiertas</span>
+                @else
+                < <span class="px-2 py-1 text-sm text-gray-100 bg-gray-900 rounded-full">Inscripciones
+                    Finalizadas</span>
+@endif
             </div>
         </div>
 
@@ -105,7 +109,7 @@
         <div class="order-1 lg:order-2">
             <div class="card md:fixed md:right-20 md:top-20">
                 <figure >
-                    <img class="object-cover w-full rounded shadow-lg " src="{{Storage::url($course->image->url)}}"
+                    <img class="object-cover w-full rounded shadow-lg " src="{{ url('storage/'.$course->image->url) }}"
                         alt="">
                 </figure>
 
@@ -113,7 +117,7 @@
 
                     <p class="mb-2 text-gray-500 text-md">Inicio: {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
                     <p class="mb-2 text-gray-500 text-md">Precio: ${{$course->price}}</p>
-                    <p class="mb-2 text-gray-500 text-md">Duracion: 3 meses </p>
+                    <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
                     <a href="{{$course->link_inscription}}"
                         class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
                         PreInscripcion

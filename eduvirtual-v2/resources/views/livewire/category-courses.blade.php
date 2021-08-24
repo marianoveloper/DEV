@@ -7,7 +7,7 @@
                 <a href="{{route('courses.show', $course)}}">
                     <article>
                         <figure>
-                            <img class="object-cover object-center w-full" src="{{Storage::url($course->image->url)}}" alt="">
+                            <img class="object-cover object-center w-full"  src="{{ url('storage/'.$course->image->url) }}" alt="">
                         </figure>
                         <div class="px-6 py-4">
                             <!--<h1 class="mb-2 text-xl leading-6 text-gray-700">{{Str::limit($course->title,40)}}</h1>-->

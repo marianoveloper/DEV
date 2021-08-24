@@ -17,6 +17,7 @@
 
     @livewire('courses-index')
     <x-slot name="js">
+
         <script>
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',

@@ -72,7 +72,7 @@
                                 <div class="flex-shrink-0 w-10 h-10">
                                     @isset($course->image)
                                     <img id="picture" class="object-cover object-center w-10 h-10 rounded-full"
-                                        src="{{Storage::url($course->image->url)}}">
+                                       src="{{ url('storage/'.$course->image->url) }}">
                                     @else
                                     <img id="picture" class="object-cover object-center w-10 h-10 rounded-full"
                                         src="{{asset('images/cursos/9.png')}}">

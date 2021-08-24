@@ -33,7 +33,7 @@ class CategoryFilter extends Component
             });
         }
 
-        $courses=$coursesQuery->paginate(10);
+        $courses=$coursesQuery->whereIn('status_course',[1,3])->paginate(10);
 
         return view('livewire.category-filter',compact('courses'));
     }

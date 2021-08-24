@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        Storage::deleteDirectory('<public/courses');
-        Storage::makeDirectory('public/courses');
+        Storage::deleteDirectory('courses');
+        Storage::makeDirectory('courses');
 
         $this->call(PermissionSeeder::class);//llama al seeder generado
         $this->call(RoleSeeder::class);
