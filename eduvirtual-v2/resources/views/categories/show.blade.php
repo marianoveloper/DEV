@@ -16,7 +16,7 @@
     </section>
 
     @livewire('category-filter',['category' => $category])
-
+    <x-wsp/>>
     <x-slot name="js">
         <script>
             var botmanWidget = {

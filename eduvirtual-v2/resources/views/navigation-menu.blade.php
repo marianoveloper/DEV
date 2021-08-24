@@ -10,6 +10,10 @@
             'route' => route('courses.index'),
             'active' => request()->routeIs('courses.*')
 ],
+
+
+
+
     ];
 @endphp
 
@@ -34,8 +38,47 @@
                     </x-jet-nav-link>
 
                 @endforeach
+
+                </div>
+                <div class="relative hidden mt-4 ml-3 8 sm:ml-10 sm:flex">
+                <x-jet-dropdown align="none" width="48">
+                    <x-slot name="trigger">
+
+                            <span class="inline-flex rounded-md">
+                                <button type="button" class="inline-flex items-center px-1 pt-1 text-base font-medium leading-5 text-gray-900 transition duration-150 ease-in-out ">
+                                     {{ __('Categorias') }}
+
+                                    <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </span>
+
+                    </x-slot>
+
+                    <x-slot name="content">
+                        @foreach(\App\Models\Category::all() as $page)
+
+                        <x-jet-dropdown-link href="{{route('categories.show',$page->slug)}}">
+                            {{ __($page['name']) }}
+                        </x-jet-dropdown-link>
+                    @endforeach
+
+                    </x-slot>
+                </x-jet-dropdown>
                 </div>
             </div>
+
+<!------------------------------------------------------------>
+
+
+
+
+
+
+
+<!------------------------------------------------------------->
+
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
@@ -157,8 +200,9 @@
                         </x-slot>
                     </x-jet-dropdown>
                     @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-                   <!-- <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>-->
+                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline"><i class="text-base fas fa-users-cog"></i></a>
+
+                    <!-- <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>-->
                     @endauth
                 </div>
             </div>
@@ -185,8 +229,36 @@
             </x-jet-responsive-nav-link>
 
         @endforeach
+
         </div>
 
+        <div class="pt-2 pb-3 pl-3 space-y-1">
+            <x-jet-dropdown align="top" width="48">
+                <x-slot name="trigger">
+
+                        <span class="rounded-md">
+                            <button type="button" class="items-center px-1 pt-1 text-base font-medium leading-5 text-gray-900 transition duration-150 ease-in-out ">
+                                 {{ __('Categorias') }}
+
+                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </span>
+
+                </x-slot>
+
+                <x-slot name="content">
+                    @foreach(\App\Models\Category::all() as $page)
+
+                    <x-jet-dropdown-link href="{{route('categories.show',$page->slug)}}">
+                        {{ __($page['name']) }}
+                    </x-jet-dropdown-link>
+                @endforeach
+
+                </x-slot>
+            </x-jet-dropdown>
+        </div>
         <!-- Responsive Settings Options -->
         @auth
 
@@ -278,7 +350,7 @@
 
             <div class="py-1 border-t border-gray-200">
                 <x-jet-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    Login
+                    <i class="fas fa-users-cog"></i>
                 </x-jet-responsive-nav-link>
 
                 <!--<x-jet-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
