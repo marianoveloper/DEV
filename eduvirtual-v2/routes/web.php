@@ -23,7 +23,13 @@ Route::get('cursos/{course}',[CourseController::class,'show'])->name('courses.sh
 
 Route::get('categories/{category}',[CategoryController::class,'show'])->name('categories.show');
 
+Route::get('/offline', function () {
+    return view('vendor/laravelpwa/offline');
+});
 
+Route::get('/storage',function(){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+});
 
 
 

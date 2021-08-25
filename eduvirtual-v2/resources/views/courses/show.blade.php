@@ -5,15 +5,16 @@
         <div class="container grid grid-cols-3">
             <div class="col-span-2">
 
-                <div class="text-white ">
-                    <h1 class="text-5xl">{{$course->title}}</h1>
+                <div class="mb-2 text-white">
+
+                    <h3 class="text-4xl">{{$course->type->name}}</h3>
                 </div>
 
                 @if($course->status_course==1)
-                <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-red-600 rounded-full">Inscripciones
+                <span class="px-2 py-1 mt-2 text-xs text-gray-200 bg-red-600 rounded-full">Inscripciones
                     Abiertas</span>
                 @else
-                < <span class="px-2 py-1 text-sm text-gray-100 bg-gray-900 rounded-full">Inscripciones
+                < <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
                     Finalizadas</span>
 @endif
             </div>
@@ -132,7 +133,7 @@
 
     </div>
 
-    <x-wsp/>>
+    <x-wsp/>
     <x-slot name="js">
 
         <script>

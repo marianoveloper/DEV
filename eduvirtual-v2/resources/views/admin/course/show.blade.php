@@ -125,7 +125,7 @@
             <div class="card md:fixed md:right-20 md:top-20">
                 <figure >
                     @if($course->image)
-                    <img class="object-cover w-full rounded shadow-lg " src="{{Storage::url($course->image->url)}}"
+                    <img class="object-cover w-full rounded shadow-lg " src="{{ url('storage/'.$course->image->url) }}"
                         alt="">
                         @endif
                 </figure>

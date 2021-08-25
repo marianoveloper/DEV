@@ -79,9 +79,8 @@
             @livewire('category-courses')
         </section>
     </div>
-    <section class="py-12 mt-20" style="background-image: url({{asset('images/homes/barra-verde.png')}})">
-        <h1 class="text-3xl text-center text-white">Nuestras Próximas Propuestas</h1>
-        <p class="text-center text-white"> Muy Pronto en nuestro catálogo</p>
+    <section class="py-8 " style="background-image: url({{asset('images/homes/barra-verde.png')}})">
+        <h1 class="text-3xl text-center text-white">Próximamente</h1>
 
     </section>
     <div class="container py-8">

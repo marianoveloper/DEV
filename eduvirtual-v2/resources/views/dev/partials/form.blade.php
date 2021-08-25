@@ -40,7 +40,7 @@
 @enderror
 </div>
 <div class="mb-4">
-    {!! Form::label('date_start', 'Fecha de Inicio') !!}
+    {!! Form::label('date_start', 'Fecha de Inicio del Curso') !!}
 {!! Form::date('date_start',null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_start')? 'border-red-600': '')]) !!}
 
     @error('date_start')
@@ -48,7 +48,7 @@
 @enderror
 </div>
 <div class="mb-4">
-    {!! Form::label('date_limit', 'Fecha Limite') !!}
+    {!! Form::label('date_limit', 'Fecha Limite de Inscripción') !!}
 {!! Form::date('date_limit', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('date_limit')? 'border-red-600': '')]) !!}
 
     @error('date_limit')
