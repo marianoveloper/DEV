@@ -31,5 +31,6 @@ class CategorySeeder extends Seeder
             'slug'=>Str::slug('Cursos de Actualización')
         ]);
 
+
     }
 }

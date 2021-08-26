@@ -14,7 +14,7 @@
                 <span class="px-2 py-1 mt-2 text-xs text-gray-200 bg-red-600 rounded-full">Inscripciones
                     Abiertas</span>
                 @else
-                < <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
+                 <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
                     Finalizadas</span>
 @endif
             </div>

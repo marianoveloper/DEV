@@ -1,7 +1,7 @@
-<div>
+<div class="container py-8">
     @if(count($courses))
 <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
-            loop: true,
+            loop: false,
             slidesPerView: 1,
             spaceBetween: 0,
 

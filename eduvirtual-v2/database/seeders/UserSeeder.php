@@ -17,22 +17,22 @@ class UserSeeder extends Seeder
       $user=  User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password'=> bcrypt('admin2021')
+            'password'=> bcrypt('Admin_virtual$@')
         ]);
         $user=  User::create([
             'name' => 'Marita',
-            'email' => 'marita@gmail.com',
-            'password'=> bcrypt('eduvirtual')
+            'email' => 'jefatura@gmail.com',
+            'password'=> bcrypt('Eduvirtual_2021')
         ]);
         $user=  User::create([
             'name' => 'DEV',
             'email' => 'campusvirtual@uccuyo.edu.ar',
-            'password'=> bcrypt('virtual2021')
+            'password'=> bcrypt('Virtual_2021')
         ]);
         $user=  User::create([
-            'name' => 'toto',
+            'name' => 'Super Admin',
             'email' => 'toto@gmail.com',
-            'password'=> bcrypt('toto2021')
+            'password'=> bcrypt('t@t@2021')
         ]);
         $user->assignRole('Admin');
     }

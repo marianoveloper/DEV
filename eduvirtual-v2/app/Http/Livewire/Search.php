@@ -15,7 +15,9 @@ class Search extends Component
     }
 
     public function getResultsProperty(){
-        return Course::where('title','LIKE','%' . $this->search . '%')->where('status',3)->take(8)->get();
+        return Course::where('title','LIKE','%' . $this->search . '%')->where('status',3)
+        ->whereIn('status_course',[1,3])
+        ->take(8)->get();
     }
 
 }

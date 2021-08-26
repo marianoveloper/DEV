@@ -32,6 +32,11 @@ class TypeSeeder extends Seeder
             'slug'=>Str::slug('Profesorado')
         ]);
         Type::create([
+            'category_id'=>1,
+            'name'=>'Grado',
+            'slug'=>Str::slug('Grado')
+        ]);
+        Type::create([
             'category_id'=>2,
             'name'=>'Especialización',
             'slug'=>Str::slug('Especialización')
