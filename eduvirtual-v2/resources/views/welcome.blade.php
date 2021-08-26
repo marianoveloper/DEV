@@ -92,7 +92,34 @@
     <!--------------------------------------------------->
 <x-wsp/>>
     <x-slot name="js">
-
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 1,
+              spaceBetween: 0,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+              breakpoints: {
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 10,
+                },
+              },
+            });
+          </script>
 
         <script>
             new Glider(document.querySelector('.glider'), {
@@ -132,7 +159,7 @@
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',
                 title: "Uccuyo Virtual",
-                introMessage: ' Hola ✋ a Uccuyo Virtual En que podemos ayudarte?',
+                introMessage: ' Hola ✋ a Uccuyo Virtual, Soy tu asistente virtual. Para poder ayudarte, seleccioná el motivo por el cual querés consultarme',
                 mainColor: '#fd9807',
                 bubbleBackground: '#fd9807',
                 bubbleAvatarUrl: '../images/chat5.png',

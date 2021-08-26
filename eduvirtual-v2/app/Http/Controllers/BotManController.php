@@ -16,15 +16,7 @@ class BotManController extends Controller
     {
         $botman = app('botman');
 
-       /** $botman->hears('{message}', function($botman, $message) {
 
-           * if ($message == 'hi') {
-            *    $this->askName($botman);
-            *}else{
-            *    $botman->reply("write 'hi' for testing...");
-           * }
-
-        *}); */
 
         $botman->listen();
     }
@@ -46,8 +38,5 @@ class BotManController extends Controller
 
         $bot->startConversation(new Interactives());
     }
-public function startOperations(Botman $bot){
-    $bot->startConversation(new Operations());
-}
 
 }
