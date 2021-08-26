@@ -159,7 +159,7 @@
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',
                 title: "Uccuyo Virtual",
-                introMessage: ' Hola ✋ a Uccuyo Virtual, Soy tu asistente virtual. Para poder ayudarte, seleccioná el motivo por el cual querés consultarme',
+                introMessage: ' Hola ✋ a Uccuyo Virtual, Soy tu asistente virtual. En podemos ayudarte?',
                 mainColor: '#fd9807',
                 bubbleBackground: '#fd9807',
                 bubbleAvatarUrl: '../images/chat5.png',

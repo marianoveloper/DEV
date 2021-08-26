@@ -24,16 +24,7 @@ class BotManController extends Controller
 
 
 
-    /*public function askName($botman)
-    {
-        $botman->ask('Hello! What is your Name?', function(Answer $answer) {
 
-            $name = $answer->getText();
-
-            $this->say('Nice to meet you '.$name);
-        });
-    }
-**/
     public function startInteractive(BotMan $bot){
 
         $bot->startConversation(new Interactives());

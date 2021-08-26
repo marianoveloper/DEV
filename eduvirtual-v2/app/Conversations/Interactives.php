@@ -33,7 +33,7 @@ class Interactives extends Conversation
                 Button::create('Propuestas Virtuales')->value('0'),
                 Button::create('Asistencia Campus virtual')->value('1'),
                 Button::create('Apoyatura a la Presencialidad')->value('2'),
-                Button::create('Contactos de Educación Virtual')->value('3'),
+                Button::create('Contactos del Departamento de Educación Virtual')->value('3'),
             ]);
         return $this->ask($question,function (Answer $answer){
             //$this->say($answer->getValue());

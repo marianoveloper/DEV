@@ -19,7 +19,7 @@ $botman->hears('.*(hola|buenas|buenos días|buenos dias|buenas tardes|buenas noc
 
 $botman->fallback(function($bot){
 
-    $bot->reply('Lo siento no entiendo, para poder ayudarte elige una de las siguientes opciones');
+    $bot->reply('Para poder ayudarte elige una de las siguientes opciones:');
 
     $bot->startConversation(new Interactives);
 });

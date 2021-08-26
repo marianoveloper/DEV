@@ -4,19 +4,22 @@
 namespace App\Values;
 
 
+
 use App\Strategies\Interactives\Img;
-use App\Strategies\Interactives\Mp4;
+use App\Strategies\Interactives\Asistencia;
+use App\Strategies\Interactives\Dev;
 use App\Strategies\Interactives\NotFound;
 use App\Strategies\Interactives\Question;
-use App\Strategies\Interactives\Validate;
+
+use App\Strategies\Interactives\Propuesta;
 
 final class Interactive {
     const GET_STRATEGY=[
 
-      '0'=>Propuestas::class,
-      '1' =>Asistencia::class,
-      '2' =>Img::class,
-      '3'=>Contactos::class,
+      '0'=>Propuesta::class,
+      '1'=>Asistencia::class,
+      '2'=>Img::class,
+      '3'=>Dev::class,
 
     ];
 
