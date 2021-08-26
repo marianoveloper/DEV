@@ -38,7 +38,7 @@ public function mount(){
         $categories= Category::all();
 
         $courses = Course::where('status', 3)
-        ->whereIn('status_course',[1,3])
+        ->whereIn('status_course',[1,3,4])
         ->category($this->category_id)
         ->type($this->type_id)
         ->latest('id')

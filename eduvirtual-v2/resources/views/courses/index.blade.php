@@ -17,7 +17,7 @@
 
     @livewire('courses-index')
 
-    <x-wsp/>>
+    <x-wsp/>
     <x-slot name="js">
 
         <script>

@@ -1,5 +1,3 @@
-
-
 <div>
     <x-slot name="header">
         <div class="flex items-center">
@@ -41,18 +39,18 @@
                             Estado
                         </th>
                         <th scope="col"
-                        class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Fecha de Inicio
-                    </th>
-                    <th scope="col"
-                    class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                    Fecha Limite Insc.
-                </th>
-                <th scope="col"
-                class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                Precio
-            </th>
-            <th scope="col"
+                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                            Fecha de Inicio
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                            Fecha Limite Insc.
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                            Precio
+                        </th>
+                        <th scope="col"
                             class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                             Curso
                         </th>
@@ -72,110 +70,122 @@
                                 <div class="flex-shrink-0 w-10 h-10">
                                     @isset($course->image)
                                     <img id="picture" class="object-cover object-center w-10 h-10 rounded-full"
-                                       src="{{ url('storage/'.$course->image->url) }}">
+                                        src="{{ url('storage/'.$course->image->url) }}">
                                     @else
                                     <img id="picture" class="object-cover object-center w-10 h-10 rounded-full"
                                         src="{{asset('images/cursos/9.png')}}">
                                     @endisset
                                 </div>
 
-                            <div class="ml-4">
-                                <div class="text-sm font-medium text-gray-900">
-                                    {{$course->title}}
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-gray-900">
+                                        {{$course->title}}
+
+                                    </div>
 
                                 </div>
-
                             </div>
-                  </div>
-             </td>
-                <td class="px-6 py-4 whitespace-nowrap">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
 
-                 <div class="text-sm text-gray-900">{{$course->type->category->name}}</div>
-                    <div class="text-sm text-gray-500">{{$course->type->name}}</div>
-              </td>
+                            <div class="text-sm text-gray-900">{{$course->type->category->name}}</div>
+                            <div class="text-sm text-gray-500">{{$course->type->name}}</div>
+                        </td>
 
-            <td class="px-6 py-4 whitespace-nowrap">
-                       @switch($course->status)
-                               @case(1)
-                                  <span class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
-                                           Borrador
-                                                        </span>
-                             @break
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            @switch($course->status)
+                            @case(1)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
+                                Borrador
+                            </span>
+                            @break
                             @case(2)
-                            <span class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
                                 Revision
                             </span>
                             @break
                             @case(3)
-                            <span class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
                                 Publicado
                             </span>
                             @break
                             @default
 
-                        @endswitch
+                            @endswitch
 
-                      </td>
-  <td class="px-6 py-4 whitespace-nowrap">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
 
-                 <div class="text-sm text-gray-900">{{$course->date_start}}</div>
+                            <div class="text-sm text-gray-900">{{$course->date_start}}</div>
 
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
 
-                <div class="text-sm text-gray-900">{{$course->date_limit}}</div>
+                            <div class="text-sm text-gray-900">{{$course->date_limit}}</div>
 
-             </td>
-             <td class="px-6 py-4 whitespace-nowrap">
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
 
-                <div class="text-sm text-gray-900">$ {{$course->price}}</div>
+                            <div class="text-sm text-gray-900">$ {{$course->price}}</div>
 
-             </td>
-             <td class="px-6 py-4 whitespace-nowrap">
-                @switch($course->status_course)
-                        @case(1)
-                           <span class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
-                                    Activo
-                                                 </span>
-                      @break
-                     @case(2)
-                     <span class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
-                         Proximamente
-                     </span>
-                     @break
-                     @case(3)
-                     <span class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
-                         Finalizado
-                     </span>
-                     @break
-                     @default
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            @switch($course->status_course)
+                            @case(1)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-red-800 bg-red-100 rounded-full">
+                                Activo
+                            </span>
+                            @break
+                            @case(2)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Proximamente
+                            </span>
+                            @break
+                            @case(3)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
+                                Finalizado
+                            </span>
+                            @case(4)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-blue-100 rounded-full">
+                                Permanente
+                            </span>
+                            @break
+                            @default
 
-                 @endswitch
+                            @endswitch
 
-               </td>
-                 <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                         <a href="{{route('dev.courses.edit',$course)}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                     </td>
-                  </tr>
+                        </td>
+                        <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                            <a href="{{route('dev.courses.edit',$course)}}"
+                                class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        </td>
+                    </tr>
 
-              @endforeach
+                    @endforeach
 
 
-                 <!-- More people... -->
-                 </tbody>
-             </table>
+                    <!-- More people... -->
+                </tbody>
+            </table>
 
             <div class="px-6 py-4">
                 {{$courses->links()}}
             </div>
-    @else
-    <div class="px-6 py-4">
-        No hay ningun registro coincidente
-    </div>
-    @endif
+            @else
+            <div class="px-6 py-4">
+                No hay ningun registro coincidente
+            </div>
+            @endif
 
 
-    </x-table-responsive>
+        </x-table-responsive>
 
 
 

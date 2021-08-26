@@ -96,7 +96,7 @@
     </div>
     <div>
         {!! Form::label('status_course', 'Estado') !!}
-        {!! Form::select('status_course',['1'=>'Activo','2'=>'Proximamente','3'=>'Finalizado'], null, ['class'=>'form-input block w-full mt-1']) !!}
+        {!! Form::select('status_course',['1'=>'Activo','2'=>'Proximamente','3'=>'Finalizado','4'=>'Permanente'], null, ['class'=>'form-input block w-full mt-1']) !!}
     </div>
 
 </div>
@@ -112,7 +112,7 @@
     </figure>
     <div>
         <p class="mb-2">
-           Cargar imagen las medidas son 350x350 en formato .png
+           Cargar imagen las medidas son 350x250 en formato .png
         </p>
         {!! Form::file('file', ['class'=> 'form-input w-full'. ($errors->has('file')? 'border-red-600': ''),'id'=>'file','accept'=>'image/*']) !!}
         @error('file')

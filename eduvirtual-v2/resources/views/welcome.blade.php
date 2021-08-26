@@ -90,7 +90,7 @@
         </section>
     </div>
     <!--------------------------------------------------->
-<x-wsp/>>
+<x-wsp/>
     <x-slot name="js">
         <script>
             var swiper = new Swiper(".mySwiper", {

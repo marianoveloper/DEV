@@ -3,6 +3,7 @@
 
 
     <h1 class="text-2xl font-bold">Información del curso</h1>
+
     <hr class="mt-2 mb-6">
 
     {!! Form::model($course, ['route'=>['dev.courses.update',$course],'method'=>'put','files'=> true]) !!}

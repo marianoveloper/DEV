@@ -11,8 +11,17 @@
             <div class="justify-between lg:flex">
                 <div>
                     <h1 class="mb-2 text-lg font-semibold text-gray-700 ">{{ Str::limit($course->title,40) }}</h1>
+                    @if($course->status_course==4)
+                    <p class="mb-2 text-sm text-gray-500">Inicio: Acceso Inmediato</p>
+                    @else
                     <p class="mb-2 text-sm text-gray-500">Inicio: {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
-                    <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
+                    @endif
+                    @if($course->type->category->id==1)
+                    <p class="mb-2 text-sm text-gray-500">Duración: {{$course->duration}}</p>
+
+                @else
+                <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
+                @endif
                 </div>
 
                 <div class="flex items-center">

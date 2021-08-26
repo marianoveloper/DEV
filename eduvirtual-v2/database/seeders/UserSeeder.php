@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'password'=> bcrypt('Virtual_2021')
         ]);
         $user=  User::create([
-            'name' => 'Super Admin',
+            'name' => 'Mariano Admin',
             'email' => 'toto@gmail.com',
             'password'=> bcrypt('t@t@2021')
         ]);

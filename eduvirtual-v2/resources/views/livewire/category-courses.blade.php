@@ -11,8 +11,17 @@
                         </figure>
                         <div class="px-6 py-4">
                             <!--<h1 class="mb-2 text-xl leading-6 text-gray-700">{{Str::limit($course->title,40)}}</h1>-->
-                            <p class="mb-2 text-sm text-gray-500">Inicio: {{$course->date_start}}</p>
-                            <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
+                            @if($course->status_course==4)
+        <p class="mb-2 text-sm text-gray-500">Inicio: Acceso Inmediato</p>
+        @else
+        <p class="mb-2 text-sm text-gray-500">Inicio: {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
+        @endif
+        @if($course->type->category->id==1)
+        <p class="mb-2 text-sm text-gray-500">Duración: {{$course->duration}}</p>
+
+    @else
+    <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
+    @endif
 
                         </div>
                     </article>

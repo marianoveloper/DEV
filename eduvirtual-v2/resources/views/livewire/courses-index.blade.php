@@ -58,9 +58,18 @@
     </div>
 
     <div class="grid mx-auto mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-7xl sm:px-6 lg:px-8 gap-x-6 gap-y-8">
-        @foreach($courses as $course)
+        @forelse($courses as $course)
             <x-course-card :course="$course"/>
-        @endforeach
+            @empty
+            <li class="md:col-span-2 lg:col-span-4">
+                <div class="relative px-4 py-3 text-red-700 bg-red-100 border border-red-400 rounded" role="alert">
+                    <strong class="font-bold">Upss!</strong>
+                    <span class="block sm:inline">No existe ningún curso con ese filtro.</span>
+                </div>
+            </li>
+
+
+        @endforelse
 
     </div>
 

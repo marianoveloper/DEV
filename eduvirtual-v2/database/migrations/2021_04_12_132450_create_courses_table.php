@@ -30,7 +30,7 @@ class CreateCoursesTable extends Migration
             $table->string('url_info');//informativo
             $table->string('link_inscription');//link intra/siu/form
             $table->enum('status',[Course::Borrador,Course::Revision,Course::Publicado])->default(Course::Borrador);//ESTADO DEL CURSO
-           $table->enum('status_course',[Course::Activo,Course::Proximamente,Course::Finalizado])->default(Course::Activo);
+           $table->enum('status_course',[Course::Activo,Course::Proximamente,Course::Finalizado,Course::Permanente])->default(Course::Activo);
             $table->string('slug');//direccion
 
 

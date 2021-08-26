@@ -10,13 +10,13 @@
                     <h3 class="text-4xl">{{$course->type->name}}</h3>
                 </div>
 
-                @if($course->status_course==1)
+                @if($course->status_course==1 || $course->status_course==4)
                 <span class="px-2 py-1 mt-2 text-xs text-gray-200 bg-red-600 rounded-full">Inscripciones
                     Abiertas</span>
                 @else
-                 <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
+                <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
                     Finalizadas</span>
-@endif
+                @endif
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                     <article class="mb-4 shadow" x-data="{ open: true }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-tags"></i>Objetivos</h1>
+                            <h1 class="text-lg font-bold text-gray-600">Objetivos</h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
@@ -56,7 +56,8 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-users"></i>Destinatarios</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-users"></i>Destinatarios
+                            </h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <p class="text-base text-gray-700">{{$course->destination}}</p>
@@ -70,12 +71,14 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-clipboard-list"></i>Requisitos</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i
+                                    class="mr-2 fas fa-clipboard-list"></i>Requisitos</h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
                                 @forelse($course->requirements as $requirement)
-                                <li class="text-base text-gray-700"><i class="mr-2 fas fa-check-circle"></i>{{$requirement->name}}</li>
+                                <li class="text-base text-gray-700"><i
+                                        class="mr-2 fas fa-check-circle"></i>{{$requirement->name}}</li>
 
                                 @empty
                                 <li>Sin Requisitos </li>
@@ -88,11 +91,12 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-bookmark"></i>Resoluciones</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-bookmark"></i>Resoluciones
+                            </h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
-                                @forelse($course->requirements as $requirement)
+                                @forelse($course->resolutions as $requirement)
                                 <li class="text-base text-gray-700"><i
                                         class="mr-2 fas fa-play-circle"></i>{{$requirement->name}}</li>
 
@@ -109,16 +113,28 @@
         </div>
         <div class="order-1 lg:order-2">
             <div class="card md:fixed md:right-20 md:top-20">
-                <figure >
+                <figure>
                     <img class="object-cover w-full rounded shadow-lg " src="{{ url('storage/'.$course->image->url) }}"
                         alt="">
                 </figure>
 
                 <div class="px-6 py-4">
 
-                    <p class="mb-2 text-gray-500 text-md">Inicio: {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
+                    @if($course->status_course==4)
+                    <p class="mb-2 text-gray-500 text-md">Inicio: Acceso Inmediato</p>
+                    @else
+                    <p class="mb-2 text-gray-500 text-md">Inicio:
+                        {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
+                    @endif
+
+                    @if($course->type->category->id==1)
+                    <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
+
+                    @else
                     <p class="mb-2 text-gray-500 text-md">Precio: ${{$course->price}}</p>
                     <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
+                    @endif
+
                     <a href="{{$course->link_inscription}}"
                         class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
                         PreInscripcion
@@ -133,7 +149,7 @@
 
     </div>
 
-    <x-wsp/>
+    <x-wsp />
     <x-slot name="js">
 
         <script>
