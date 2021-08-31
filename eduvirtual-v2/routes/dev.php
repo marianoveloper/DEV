@@ -16,4 +16,6 @@ Route::resource('courses', CourseController::class)->names('courses');
 //Route::get('courses/{course}/curriculum', function($id){})->name('courses.curriculum');
 Route::get('courses/{course}/goals', [CourseController::class, 'goals'])->name('courses.goals');
 
+
+
 Route::post('courses/{course}/status',[CourseController::class,'status'])->name('courses.status');

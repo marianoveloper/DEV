@@ -79,8 +79,8 @@
 
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
-                                        {{$course->title}}
 
+                                        {{Str::limit($course->title,20)}}
                                     </div>
 
                                 </div>
@@ -151,6 +151,7 @@
                                 class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100 rounded-full">
                                 Finalizado
                             </span>
+                            @break
                             @case(4)
                             <span
                                 class="inline-flex px-2 text-xs font-semibold leading-5 text-green-800 bg-blue-100 rounded-full">

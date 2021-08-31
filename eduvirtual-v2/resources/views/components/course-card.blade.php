@@ -18,7 +18,11 @@
         <p class="mb-2 text-sm text-gray-500">Duración: {{$course->duration}}</p>
 
         @else
-        <p class="mb-2 text-sm text-gray-500">Precio: ${{$course->price}}</p>
+        @if($course->payment!= null && $course->payment->status_price==1)
+        <p class="mb-2 text-sm text-gray-500">Precio Total: ${{$course->price}}</p>
+        @elseif($course->payment!= null)
+        <p class="mb-2 text-sm text-gray-500">Precio: {{$course->payment->quota}} cuotas de ${{$course->price}}</p>
+        @endif
         @endif
         @if($course->status_course==1 || $course->status_course==4)
         <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-green-600 rounded-full">Inscripciones

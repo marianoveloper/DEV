@@ -27,9 +27,9 @@ Route::get('/offline', function () {
     return view('vendor/laravelpwa/offline');
 });
 
-Route::get('/storage',function(){
-    \Illuminate\Support\Facades\Artisan::call('storage:link');
-});
+/**Route::get('/storage',function(){
+   return \Illuminate\Support\Facades\Artisan::call('storage:link');
+});**/
 
 
 

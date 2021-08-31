@@ -75,10 +75,7 @@ public function getRouteKeyName(){
 
     }
 
-    public function payment(){
-        return $this->belongsTo('App\Models\Payment');
 
-    }
 /*
     public function category(){
         return $this->belongsTo('App\Models\Category');
@@ -92,6 +89,9 @@ public function getRouteKeyName(){
     public function requirements(){
 
         return $this->hasMany('App\Models\Requirement');
+    }
+    public function payment(){
+        return $this->hasOne('App\Models\Payment');
     }
 
     public function goals(){

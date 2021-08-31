@@ -13,8 +13,13 @@ class Payment extends Model
     const Inscripcion=1;//Boton inscripcion
     const PreInscripcion=2;// Boton Pre-Inscripcion
 
+    const Contado=1;
+    const Cuotas=2;
+    const Gratuito=3;
 
-    public function courses(){
-        return $this->hasMany('App\Models\Course');
+
+
+    public function course(){
+        return $this->belongsTo('App\Models\Course');
     }
 }

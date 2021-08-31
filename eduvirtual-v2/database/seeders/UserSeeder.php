@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         ]);
         $user=  User::create([
             'name' => 'Marita',
-            'email' => 'jefatura@gmail.com',
+            'email' => 'jefatura@uccuyo.edu.ar',
             'password'=> bcrypt('Eduvirtual_2021')
         ]);
         $user=  User::create([

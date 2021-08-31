@@ -147,21 +147,29 @@
                     @if($course->status_course==4)
                     <p class="mb-2 text-gray-500 text-md">Inicio: Acceso Inmediato</p>
                     @else
-                    <p class="mb-2 text-sm text-gray-500">Inicio:
+                    <p class="mb-2 text-gray-500 text-md">Inicio:
                         {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
                     @endif
+
                     @if($course->type->category->id==1)
-                    <p class="mb-2 text-sm text-gray-500">Duración: {{$course->duration}}</p>
+                    <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
 
                     @else
-                    <p class="mb-2 text-gray-500 text-md">Precio: ${{$course->price}}</p>
-                    <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
+
+                            @if($course->payment!= null && $course->payment->status_price==1)
+                                 <p class="mb-2 text-gray-500 text-md">Precio Total: ${{$course->price}}</p>
+                            @elseif($course->payment!= null)
+                                     <p class="mb-2 text-gray-500 text-md">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
+                            @endif
+
+                                 <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
                     @endif
-                    <a href="{{$course->link_inscription}}"
+
+                    <a target="_blank" href="{{$course->link_inscription}}"
                         class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
                         PreInscripcion
                     </a>
-                    <a href="{{$course->url_info}}"
+                    <a target="_blank" href="{{$course->url_info}}"
                         class="block px-8 py-3 mt-4 text-center text-green-900 border border-green-900 rounded hover:border-white hover:bg-yellow-500 hover:text-white">Informativo</a>
                 </div>
 

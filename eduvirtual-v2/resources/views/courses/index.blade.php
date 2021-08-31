@@ -24,7 +24,7 @@
             var botmanWidget = {
                 frameEndpoint: '/botman/chat',
                 title:"Uccuyo Virtual",
-                 introMessage: 'Hola a Uccuyo Virtual En que podemos ayudarte?',
+                 introMessage: 'Hola 👋 Bienvenida/o a UCCuyo Virtual. Soy tu asistente virtual. En qué puedo ayudarte?',
                  mainColor: '#fd9807',
                  bubbleBackground:'#fd9807',
                  bubbleAvatarUrl:'../images/chatbot4.png',

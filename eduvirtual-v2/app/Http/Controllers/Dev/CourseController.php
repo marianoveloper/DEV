@@ -59,6 +59,8 @@ class CourseController extends Controller
             'file'=>'required|image',
             'price'=>'required|numeric',
             'status_course'=>'required',
+            'status_price'=>'required',
+            'quota'=>'required',
 
         ]);
 
@@ -72,6 +74,11 @@ class CourseController extends Controller
             'url'=>$url,
         ]);
 
+        $course->payment()->create([
+            'price'=>$request->price,
+            'status_price'=>$request->status_price,
+            'quota'=>$request->quota,
+        ]);
 
 
 
@@ -126,9 +133,28 @@ class CourseController extends Controller
             'file'=>'image',
             'price'=>'required',
             'status_course'=>'required',
+            'status_price'=>'required',
+            'quota'=>'required',
 
         ]);
 $course->update($request->all());
+
+
+if($course->payment !=null){
+    $course->payment()->update([
+        'price'=>$request->price,
+        'status_price'=>$request->status_price,
+        'quota'=>$request->quota,
+    ]);
+}else{
+
+    $course->payment()->create([
+        'price'=>$request->price,
+        'status_price'=>$request->status_price,
+        'quota'=>$request->quota,
+    ]);
+}
+
 
 if($request->file('file')){
     $url=Storage::put('courses',$request->file('file'));
@@ -164,6 +190,11 @@ return redirect()->route('dev.courses.edit',$course);
     public function goals(Course $course){
 
         return view('dev.courses.goals',compact('course'));
+    }
+
+    public function payments(Course $course){
+
+        return view('dev.courses.payments',compact('course'));
     }
 
     public function status(Course $course){
