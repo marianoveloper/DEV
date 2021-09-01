@@ -101,7 +101,7 @@
                                         class="mr-2 fas fa-play-circle"></i>{{$requirement->name}}</li>
 
                                 @empty
-                                <li>Sin Requisitos </li>
+                                <li>Sin Resolución asignada</li>
                                 @endforelse
                             </ul>
                         </div>
@@ -120,21 +120,21 @@
 
                 <div class="px-6 py-4">
 
-                    @if($course->status_course==4)
-                    <p class="mb-2 text-gray-500 text-md">Inicio: Acceso Inmediato</p>
-                    @else
-                    <p class="mb-2 text-gray-500 text-md">Inicio:
-                        {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
+                    @if($course->status_course==4)<!--si es permanente-->
+                        <p class="mb-2 text-gray-500 text-md">Inicio: Acceso Inmediato</p>
+                        @else
+                        <p class="mb-2 text-gray-500 text-md">Inicio:
+                            {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
                     @endif
 
-                    @if($course->type->category->id==1)
-                    <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
+                    @if($course->type->category->id==1)<!-- si es una carrera -->
+                          <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
 
                     @else
 
-                            @if($course->payment!= null && $course->payment->status_price==1)
+                            @if($course->payment!= null && $course->payment->status_price==1)<!-- si contado y no es nulo--->
                                  <p class="mb-2 text-gray-500 text-md">Precio Total: ${{$course->price}}</p>
-                            @elseif($course->payment!= null)
+                            @elseif($course->payment!= null)<!--- si es cuotas --->
                                      <p class="mb-2 text-gray-500 text-md">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
                             @endif
 

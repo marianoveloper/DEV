@@ -42,7 +42,7 @@ public function mount(){
         ->category($this->category_id)
         ->type($this->type_id)
         ->latest('id')
-        ->paginate(8);
+        ->paginate(20);
 
         return view('livewire.courses-index',compact('courses','types','categories'));
     }

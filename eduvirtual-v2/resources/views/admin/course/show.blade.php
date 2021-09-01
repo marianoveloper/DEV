@@ -82,7 +82,8 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600">Destinatarios</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-users"></i>Destinatarios
+                            </h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <p class="text-base text-gray-700">{{$course->destination}}</p>
@@ -96,12 +97,14 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600">Requisitos</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i
+                                    class="mr-2 fas fa-clipboard-list"></i>Requisitos</h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
                                 @forelse($course->requirements as $requirement)
-                                <li class="text-base text-gray-700">{{$requirement->name}}</li>
+                                <li class="text-base text-gray-700"><i
+                                        class="mr-2 fas fa-check-circle"></i>{{$requirement->name}}</li>
 
                                 @empty
                                 <li>Sin Requisitos </li>
@@ -114,22 +117,22 @@
                     <article class="mb-4 shadow" x-data="{ open: false }">
                         <header class="px-4 py-2 bg-gray-200 border border-gray-200 cursor-pointer"
                             x-on:click="open = !open">
-                            <h1 class="text-lg font-bold text-gray-600">Resoluciones</h1>
+                            <h1 class="text-lg font-bold text-gray-600"><i class="mr-2 fas fa-bookmark"></i>Resoluciones
+                            </h1>
                         </header>
                         <div class="px-4 py-2 bg-white" x-show="open">
                             <ul>
-                                @forelse($course->requirements as $requirement)
+                                @forelse($course->resolutions as $requirement)
                                 <li class="text-base text-gray-700"><i
                                         class="mr-2 fas fa-play-circle"></i>{{$requirement->name}}</li>
 
                                 @empty
-                                <li>Sin Resolucion asignada</li>
+                                <li>Sin Resolución asignada</li>
                                 @endforelse
                             </ul>
                         </div>
                     </article>
                 </section>
-
 
             </div>
         </div>
