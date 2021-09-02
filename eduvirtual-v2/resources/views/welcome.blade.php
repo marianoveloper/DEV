@@ -4,7 +4,7 @@
     <section class="bg-cover" style="background-image: url({{asset('images/homes/portada-19b.png')}})">
         <div class="px-4 max-w-7x1 max-auto sm:px-6 lg:px-8 py-36">
             <div class="w-full md:w-3/4 lg:w-1/2">
-                <h1 class="text-4xl text-green-900">Estudiá Online en la Uccuyo </h1>
+                <h1 class="text-4xl text-green-900">Estudiá Online en la UCCuyo </h1>
                 <p class="mt-2 mb-4 text-lg text-green-800"> Ofrecemos Capacitaciones a Distancia</p>
 
 
@@ -27,7 +27,7 @@
                     </figure>
 
                     <header class="mt-2">
-                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> Carreras
+                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> {{$category[0]->name}}
                         </h1>
                     </header>
                 </a>
@@ -40,7 +40,7 @@
                     </figure>
                     <header class="mt-2">
                         <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline ">
-                            Diplomaturas y Especializaciones </h1>
+                            {{$category[1]->name}} </h1>
                     </header>
                 </a>
             </article>
@@ -52,8 +52,7 @@
 
                     </figure>
                     <header class="mt-2">
-                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline">Cursos de
-                            Capacitación </h1>
+                        <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline">{{$category[2]->name}} </h1>
                     </header>
                 </a>
             </article>
@@ -64,7 +63,7 @@
 
     <section class="py-12 mt-20" style="background-image: url({{asset('images/homes/barra.png')}})">
         <h1 class="text-3xl text-center text-white">¿No sabes que Estudiar?</h1>
-        <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
+        <p class="text-center text-white"> Buscá en el catálogo de propuestas y encontrá lo que necesitas</p>
         <div class="flex justify-center mt-4">
             <a href="{{route('courses.index')}}"
                 class="block px-4 py-2 mt-4 font-bold text-center text-white bg-green-600 rounded hover:bg-green-900">

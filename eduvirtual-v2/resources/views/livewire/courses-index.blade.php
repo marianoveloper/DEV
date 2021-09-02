@@ -64,7 +64,8 @@
             <li class="md:col-span-2 lg:col-span-4">
                 <div class="relative px-4 py-3 text-red-700 bg-red-100 border border-red-400 rounded" role="alert">
                     <strong class="font-bold">Upss!</strong>
-                    <span class="block sm:inline">No existe ningún curso con ese filtro.</span>
+                    <span class="block sm:inline">Actualmente no disponemos de propuestas que coincidan con su selección.</span>
+
                 </div>
             </li>
 
