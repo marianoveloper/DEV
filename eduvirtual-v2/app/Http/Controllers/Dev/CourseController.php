@@ -6,6 +6,7 @@ use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Payment;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 class CourseController extends Controller
@@ -29,7 +30,6 @@ class CourseController extends Controller
     {
         $categories=Category::pluck('name','id');
         $types=Type::pluck('name','id');
-
 
         return view('dev.courses.create',compact('categories','types'));
     }
@@ -60,6 +60,7 @@ class CourseController extends Controller
             'price'=>'required|numeric',
             'status_course'=>'required',
             'status_price'=>'required',
+            'status_link'=>'required',
             'quota'=>'required',
 
         ]);
@@ -77,6 +78,7 @@ class CourseController extends Controller
         $course->payment()->create([
             'price'=>$request->price,
             'status_price'=>$request->status_price,
+            'status_link'=>$request->status_link,
             'quota'=>$request->quota,
         ]);
 
@@ -93,6 +95,7 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
+
         return view('dev.show',compact('course'));
     }
 
@@ -106,6 +109,7 @@ class CourseController extends Controller
     {
         $categories=Category::pluck('name','id');
         $types=Type::pluck('name','id');
+
 
         return view('dev.courses.edit',compact('course','categories','types'));
     }
@@ -124,7 +128,7 @@ class CourseController extends Controller
             'slug'=> 'required|unique:courses,slug,'.$course->id,
             'description'=> 'required',
             'destination'=>'required',
-            'date_start'=>'required|date|after:tomorrow',
+            'date_start'=>'required|date',
             'date_limit'=>'required|date|after:date_start',
             'url_info'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
             'link_inscription'=>['required','regex:/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i'],
@@ -134,6 +138,7 @@ class CourseController extends Controller
             'price'=>'required',
             'status_course'=>'required',
             'status_price'=>'required',
+            'status_link'=>'required',
             'quota'=>'required',
 
         ]);
@@ -144,6 +149,7 @@ if($course->payment !=null){
     $course->payment()->update([
         'price'=>$request->price,
         'status_price'=>$request->status_price,
+        'status_link'=>$request->status_link,
         'quota'=>$request->quota,
     ]);
 }else{
@@ -151,6 +157,7 @@ if($course->payment !=null){
     $course->payment()->create([
         'price'=>$request->price,
         'status_price'=>$request->status_price,
+        'status_link'=>$request->status_link,
         'quota'=>$request->quota,
     ]);
 }

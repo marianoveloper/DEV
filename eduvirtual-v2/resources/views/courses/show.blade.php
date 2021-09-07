@@ -140,11 +140,17 @@
 
                                  <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
                     @endif
-
+                 @if($course->payment->status_link==2)
                     <a target="_blank" href="{{$course->link_inscription}}"
                         class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
-                        PreInscripcion
+                        PreInscripción
                     </a>
+                @else
+                <a target="_blank" href="{{$course->link_inscription}}"
+                    class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
+                    Inscripción
+                </a>
+                @endif
                     <a target="_blank" href="{{$course->url_info}}"
                         class="block px-8 py-3 mt-4 text-center text-green-900 border border-green-900 rounded hover:border-white hover:bg-yellow-500 hover:text-white">Informativo</a>
                 </div>

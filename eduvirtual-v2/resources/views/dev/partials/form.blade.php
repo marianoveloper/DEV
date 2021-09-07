@@ -1,6 +1,7 @@
 <div class="mb-4">
     {!! Form::label('title', 'Título del Curso') !!}
-    {!! Form::text('title', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('title')? 'border-red-600':
+    {!! Form::text('title', null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+    sm:text-sm border-gray-300 rounded-md mt-1'. ($errors->has('title')? 'border-red-600':
     '')]) !!}
 
     @error('title')
@@ -11,7 +12,8 @@
 
 <div class="mb-4">
     {!! Form::label('slug', 'Slug del Curso') !!}
-    {!! Form::text('slug', null, ['readonly'=>'readonly', 'class'=>'form-input block w-full mt-1'.
+    {!! Form::text('slug', null, ['readonly'=>'readonly', 'class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+    sm:text-sm border-gray-300 rounded-md mt-1'.
     ($errors->has('slug')? 'border-red-600': '')]) !!}
 
     @error('slug')
@@ -20,7 +22,8 @@
 </div>
 <div class="mb-4">
     {!! Form::label('description', 'Descripción') !!}
-    {!! Form::textarea('description', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('description')?
+    {!! Form::textarea('description', null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+    sm:text-sm border-gray-300 rounded-md mt-1'. ($errors->has('description')?
     'border-red-600': '')]) !!}
 
     @error('description')
@@ -29,7 +32,8 @@
 </div>
 <div class="mb-4">
     {!! Form::label('destination', 'Destinatarios') !!}
-    {!! Form::text('destination', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('destination')?
+    {!! Form::text('destination', null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+    sm:text-sm border-gray-300 rounded-md mt-1'. ($errors->has('destination')?
     'border-red-600': '')]) !!}
 
     @error('destination')
@@ -39,7 +43,8 @@
 <div class="grid grid-cols-3 gap-4">
     <div class="mb-4">
         {!! Form::label('duration', 'Duración') !!}
-        {!! Form::text('duration', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('duration')?
+        {!! Form::text('duration', null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+        sm:text-sm border-gray-300 rounded-md mt-1'. ($errors->has('duration')?
         'border-red-600': '')]) !!}
 
         @error('duration')
@@ -96,21 +101,33 @@
     </div>
 
 </div>
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-3 gap-4">
 
     <div class="mb-4">
         {!! Form::label('url_info', 'Link del informativo') !!}
-        {!! Form::text('url_info', null, ['class'=>'form-input block w-full mt-1'. ($errors->has('url_info')?
+        {!! Form::text('url_info', null, ['class'=>'block w-full
+        px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500
+        focus:border-indigo-500 sm:text-sm mt-1'. ($errors->has('url_info')?
         'border-red-600': '')]) !!}
 
         @error('url_info')
         <strong class="text-xs text-red-600">{{$message}}</strong>
         @enderror
     </div>
+
     <div class="mb-4">
-        {!! Form::label('link_inscription', 'Link de Inscripcion') !!}
-        {!! Form::text('link_inscription', null, ['class'=>'form-input block w-full mt-1'.
-        ($errors->has('link_inscription')? 'border-red-600': '')]) !!}
+        {!! Form::label('status_link', 'Boton de Inscripción/Preinscripción') !!}
+        {!! Form::select('status_link',['2'=>'PreInscripción','1'=>'Inscripción',], null, ['class'=>'block w-full
+        px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500
+        focus:border-indigo-500 sm:text-sm mt-1']) !!}
+        @error('status_link')
+        <strong class="text-xs text-red-600">{{$message}}</strong>
+        @enderror
+    </div>
+    <div class="mb-4">
+        {!! Form::label('link_inscription', 'url de Inscripcion/Form Preinscripción') !!}
+        {!! Form::text('link_inscription', null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+        sm:text-sm border-gray-300 rounded-md mt-1'. ($errors->has('link_inscription')? 'border-red-600': '')]) !!}
 
         @error('link_inscription')
         <strong class="text-xs text-red-600">{{$message}}</strong>
@@ -121,18 +138,21 @@
 
     <div>
         {!! Form::label('category_id', 'Categoria') !!}
-        {!! Form::select('category_id', $categories, null, ['class'=>'form-input block w-full mt-1'])
+        {!! Form::select('category_id', $categories, null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+        sm:text-sm border-gray-300 rounded-md mt-1'])
         !!}
 
     </div>
     <div>
         {!! Form::label('type_id', 'Subcategoria') !!}
-        {!! Form::select('type_id', $types, null, ['class'=>'form-input block w-full mt-1']) !!}
+        {!! Form::select('type_id', $types, null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+        sm:text-sm border-gray-300 rounded-md mt-1']) !!}
     </div>
     <div>
         {!! Form::label('status_course', 'Estado') !!}
         {!! Form::select('status_course',['1'=>'Activo','2'=>'Proximamente','3'=>'Finalizado','4'=>'Permanente'],
-        null, ['class'=>'form-input block w-full mt-1']) !!}
+        null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
+        sm:text-sm border-gray-300 rounded-md mt-1']) !!}
     </div>
 
 </div>
@@ -150,7 +170,7 @@
     </figure>
     <div>
         <p class="mb-2">
-            Cargar imagen las medidas son 350x250 en formato .png
+            Cargar imagen las medidas son 330x250 en formato .png
         </p>
         {!! Form::file('file', ['class'=> 'form-input w-full'. ($errors->has('file')? 'border-red-600':
         ''),'id'=>'file','accept'=>'image/*']) !!}
