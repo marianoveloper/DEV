@@ -146,13 +146,15 @@ $course->update($request->all());
 
 
 if($course->payment !=null){
+
     $course->payment()->update([
         'price'=>$request->price,
         'status_price'=>$request->status_price,
         'status_link'=>$request->status_link,
         'quota'=>$request->quota,
     ]);
-}else{
+}elseif($course->payment ==null)
+{
 
     $course->payment()->create([
         'price'=>$request->price,
