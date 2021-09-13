@@ -87,3 +87,7 @@
     content: "\f0e1";
     color: gray;
 }
+.fa-globe:before {
+    content: "\f0ac";
+    color: gray;
+}
