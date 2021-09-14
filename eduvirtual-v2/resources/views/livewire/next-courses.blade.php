@@ -15,10 +15,11 @@
                         <img class="object-cover w-full h-56" src="{{ url('storage/'.$course->image->url) }}" alt="">
 
                 </div>
-                <a href="{{$course->link_inscription}}"
-                class="block px-4 py-2 mt-1 font-bold text-center text-white bg-yellow-500 rounded hover:bg-yellow-800">
-                Preinscripción
-            </a>
+
+            <a target="_blank" href="{{$course->link_inscription}}"
+            class="block px-4 mt-1 font-bold text-center text-white bg-yellow-600 rounded hover:bg-green-900">
+            Preinscripción
+           </a>
             </div>
             @endforeach
 
