@@ -88,6 +88,8 @@
             @livewire('next-courses')
         </section>
     </div>
+
+
     <!--------------------------------------------------->
 <x-wsp/>
     <x-slot name="js">

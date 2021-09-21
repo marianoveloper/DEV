@@ -17,11 +17,13 @@
                 <p class="mb-2 text-sm text-gray-500">Duración: {{$course->duration}}</p>
 
                 @else
-                @if($course->payment!= null && $course->payment->status_price==1)
-                <p class="mb-2 text-sm text-gray-500">Precio Total: ${{$course->price}}</p>
-           @elseif($course->payment!= null)
-                    <p class="mb-2 text-sm text-gray-500">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
-           @endif
+                @if($course->payment!= null && $course->payment->status_price==1)<!-- si contado y no es nulo--->
+                <p class="mb-2 text-gray-500 text-md">Precio Total: ${{$course->price}}</p>
+      @elseif($course->payment!= null && $course->payment->status_price==2)<!--- si es cuotas --->
+                    <p class="mb-2 text-gray-500 text-md">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
+            @elseif($course->payment!= null && $course->payment->status_price==3)<!-- si es gratuito -->
+            <p class="mb-2 text-gray-500 text-md">Participación: Gratuita</p>
+     @endif
                 @endif
                 @if($course->status_course==1 || $course->status_course==4)
                 <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-green-600 rounded-full">Inscripciones

@@ -128,18 +128,20 @@
                     @endif
 
                     @if($course->type->category->id==1)<!-- si es una carrera -->
-                          <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
+                           <p class="mb-2 text-gray-500 text-md">Duración: {{$course->duration}}</p>
 
                     @else
 
-                            @if($course->payment!= null && $course->payment->status_price==1)<!-- si contado y no es nulo--->
-                                 <p class="mb-2 text-gray-500 text-md">Precio Total: ${{$course->price}}</p>
-                            @elseif($course->payment!= null)<!--- si es cuotas --->
-                                     <p class="mb-2 text-gray-500 text-md">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
-                            @endif
+                      @if($course->payment!= null && $course->payment->status_price==1)<!-- si contado y no es nulo--->
+                                <p class="mb-2 text-gray-500 text-md">Precio Total: ${{$course->price}}</p>
+                      @elseif($course->payment!= null && $course->payment->status_price==2)<!--- si es cuotas --->
+                                    <p class="mb-2 text-gray-500 text-md">Precio: {{$course->payment->quota}} cuotas de  ${{$course->price}}</p>
+                            @elseif($course->payment!= null && $course->payment->status_price==3)<!-- si es gratuito -->
+                            <p class="mb-2 text-gray-500 text-md">Participación: Gratuita</p>
+                     @endif
 
-                                 <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
-                    @endif
+                                <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
+                     @endif
 
 
                  @if($course->payment->status_link==2)
