@@ -11,9 +11,9 @@ class NextCourses extends Component
     {
 
         $courses = Course::where('status', 3)
-        ->where('status_course',2)
-        ->latest('id')
-        ->paginate(8);
+        ->whereIn('status_course',[2,5,8])
+        ->inRandomOrder()
+        ->paginate(10);
         return view('livewire.next-courses',compact('courses'));
     }
 }

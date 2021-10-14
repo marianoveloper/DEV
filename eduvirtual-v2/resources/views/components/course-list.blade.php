@@ -35,7 +35,7 @@
                     <div class="flex items-center">
                         <ul class="flex text-sm">
                             <li>
-                                @if($course->status_course==1 || $course->status_course==4)
+                                @if($course->status_course==1 || $course->status_course==4 || $course->status_course==7 || $course->status_course==8)
                                 <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-green-600 rounded-full">Inscripciones
                                     Abiertas</span>
                                 @else

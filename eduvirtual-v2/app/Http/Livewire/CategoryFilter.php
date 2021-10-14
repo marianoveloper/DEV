@@ -34,7 +34,7 @@ class CategoryFilter extends Component
         }
 
         $courses=$coursesQuery->where('status',3)
-        ->whereIn('status_course',[1,3,4])->paginate(10);
+        ->whereIn('status_course',[1,3,4,7,8])->paginate(18);
 
         return view('livewire.category-filter',compact('courses'));
     }

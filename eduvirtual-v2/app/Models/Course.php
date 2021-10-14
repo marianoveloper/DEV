@@ -18,6 +18,10 @@ class Course extends Model
     const Proximamente=2;//visible sin inscripcion o pre-inscripcion con fecha proxima abrir
     const Finalizado=3;//visible
     const Permanente=4;
+    const ProxDestacado=5;
+    const Destacado=6;
+    const ActivoDestacado=7;
+    const ActivoDestacadoProx=8;
 
 
 

@@ -9,7 +9,7 @@
             <p class="mt-2 mb-4 text-lg text-green-800"> Ofrecemos Capacitaciones a Distancia</p>
 
 
-            @livewire('search')
+
 
         </div>
     </div>
@@ -21,7 +21,7 @@
     <div
         class="grid grid-cols-1 px-4 mx-auto gap-x-6 gap-y-8 max-w-7xl sm:px-6 lg:px-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         <article>
-            <a href="{{route('categories.show',$category[0])}}">
+
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/carrera.png')}}>
 
@@ -31,10 +31,10 @@
                     <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline"> Carreras
                     </h1>
                 </header>
-            </a>
+
         </article>
         <article>
-            <a href="{{route('categories.show',$category[1])}}">
+
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/diplomatura.png')}}>
 
@@ -43,11 +43,11 @@
                     <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline ">
                         Diplomaturas y Especializaciones </h1>
                 </header>
-            </a>
+
         </article>
 
         <article>
-            <a href="{{route('categories.show',$category[2])}}">
+
                 <figure>
                     <img class="object-cover w-full rounded-xl h-36" src={{asset('images/homes/curso.png')}}>
 
@@ -56,7 +56,7 @@
                     <h1 class="text-2xl text-center text-green-900 hover:text-yellow-600 hover:underline">Cursos de
                         Capacitación </h1>
                 </header>
-            </a>
+
         </article>
 
     </div>
@@ -67,7 +67,7 @@
     <h1 class="text-3xl text-center text-white">¿No sabes que Estudiar?</h1>
     <p class="text-center text-white"> Busca en el catálogo de propuestas y encontra lo que buscas</p>
     <div class="flex justify-center mt-4">
-        <a href="{{route('courses.index')}}"
+        <a href="#"
             class="block px-4 py-2 mt-4 font-bold text-center text-white bg-green-600 rounded hover:bg-green-900">
             Catálogo de Propuestas
         </a>
@@ -77,7 +77,7 @@
 <div class="container py-8">
     <section>
         <h1 class="mb-6 text-3xl text-center text-green-900">DESTACADOS</h1>
-        @livewire('category-courses')
+
     </section>
 </div>
 <section class="py-8 " style="background-image: url({{asset('images/homes/barra-verde.png')}})">
@@ -87,7 +87,7 @@
 <div class="container py-8">
     <section>
 
-        @livewire('next-courses')
+
     </section>
 </div>
 <!--------------------------------------------------->

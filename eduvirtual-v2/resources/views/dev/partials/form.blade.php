@@ -150,7 +150,7 @@
     </div>
     <div>
         {!! Form::label('status_course', 'Estado') !!}
-        {!! Form::select('status_course',['1'=>'Activo','2'=>'Proximamente','3'=>'Finalizado','4'=>'Permanente'],
+        {!! Form::select('status_course',['1'=>'Activo','2'=>'Proximamente','3'=>'Finalizado','4'=>'Permanente','5'=>'Prox - Destacado','6'=>'Destacado','7'=>'Activo - Destacado','8'=>'Prox-Dest-Activo'],
         null, ['class'=>'focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12
         sm:text-sm border-gray-300 rounded-md mt-1']) !!}
     </div>

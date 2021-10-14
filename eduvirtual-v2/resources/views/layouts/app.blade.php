@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     @livewireStyles
-    @laravelPWA
+
     <!-- Scripts -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178248540-1"></script>
@@ -48,7 +48,7 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+    @laravelPWA
 </head>
 
 <body class="font-sans antialiased">

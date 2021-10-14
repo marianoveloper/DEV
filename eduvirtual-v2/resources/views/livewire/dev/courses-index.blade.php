@@ -158,6 +158,30 @@
                                 Permanente
                             </span>
                             @break
+                            @case(5)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Prox-Destacado
+                            </span>
+                            @break
+                            @case(6)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Destacado
+                            </span>
+                            @break
+                            @case(7)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Activo-Destacado
+                            </span>
+                            @break
+                            @case(8)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Prox-Dest-Activo
+                            </span>
+                            @break
                             @default
 
                             @endswitch
