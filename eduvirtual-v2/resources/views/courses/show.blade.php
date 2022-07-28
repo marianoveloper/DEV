@@ -9,7 +9,9 @@
 
                     <h3 class="text-4xl">{{$course->type->name}}</h3>
                 </div>
-
+@if($course->status_course==9)
+    <span class="px-2 py-1 mt-2 text-xs text-gray-200 rounded-full"></span>
+@else
                 @if($course->status_course==1 || $course->status_course==4 || $course->status_course==7 || $course->status_course==8)
 
                 <span class="px-2 py-1 mt-2 text-xs text-gray-200 bg-red-600 rounded-full">Inscripciones
@@ -18,6 +20,7 @@
                 <span class="px-2 py-1 text-xs text-gray-100 bg-gray-900 rounded-full">Inscripciones
                     Finalizadas</span>
                 @endif
+@endif
             </div>
         </div>
 
@@ -123,9 +126,9 @@
 
                     @if($course->status_course==4)<!--si es permanente-->
                         <p class="mb-2 text-gray-500 text-md">Inicio: Acceso Inmediato</p>
-                        @else
+                       <!--
                         <p class="mb-2 text-gray-500 text-md">Inicio:
-                            {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>
+                            {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}</p>-->
                     @endif
 
                     @if($course->type->category->id==1)<!-- si es una carrera -->
@@ -144,29 +147,36 @@
                                 <p class="mb-2 text-gray-500 text-md">Duracion: {{$course->duration}} </p>
                      @endif
 
+        @if($course->category_id==1)
 
-                 @if($course->payment->status_link==2)
+
+           @livewire('consulta',['carrera' => $course->title])
+
+
+        @else
+                @if($course->payment->status_link==2)
+
                     <a target="_blank" href="{{$course->link_inscription}}"
                         class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
                         PreInscripción
                     </a>
                 @else
-                <a target="_blank" href="{{$course->link_inscription}}"
-                    class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
-                    Inscripción
-                </a>
-                @endif
+                    <a target="_blank" href="{{$course->link_inscription}}"
+                        class="block px-8 py-3 mt-4 text-center text-white bg-yellow-500 border rounded hover:border-gray-500 hover:bg-white hover:text-green-900">
+                        Inscripción
+                    </a>
+                 @endif
                     <a target="_blank" href="{{$course->url_info}}"
                         class="block px-8 py-3 mt-4 text-center text-green-900 border border-green-900 rounded hover:border-white hover:bg-yellow-500 hover:text-white">Informativo</a>
                 </div>
 
-
+         @endif
             </div>
         </div>
 
     </div>
 
-    <x-wsp />
+   <!-- <x-wsp />-->
     <x-slot name="js">
 
         <script>

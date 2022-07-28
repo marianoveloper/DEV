@@ -9,7 +9,7 @@
         <!--<h1 class="mb-2 text-xl leading-6 text-gray-700">{{Str::limit($course->title,40)}}</h1>-->
         @if($course->status_course==4)
         <p class="mb-2 text-sm text-gray-500">Inicio: Acceso Inmediato</p>
-        @else
+        @elseif($course->type->category->id!=1)
         <p class="mb-2 text-sm text-gray-500">Inicio: {{ \Carbon\Carbon::parse($course->date_start)->format('d/m/Y')}}
         </p>
         @endif
@@ -27,6 +27,9 @@
 @endif
         @endif
 
+    @if($course->status_course==9)
+        <span class="px-2 py-1 mt-2 text-xs text-gray-200 rounded-full"></span>
+    @else
 
         @if($course->status_course==1 || $course->status_course==4 || $course->status_course==7 || $course->status_course==8)
         <span class="px-2 py-1 mt-1 text-sm text-gray-200 bg-green-600 rounded-full">Inscripciones
@@ -35,6 +38,8 @@
         <span class="px-2 py-1 text-sm text-gray-100 bg-gray-900 rounded-full">Inscripciones
             Finalizadas</span>
         @endif
+
+    @endif
         <a href="{{route('courses.show', $course)}}"
             class="block px-4 py-2 mt-4 font-bold text-center text-white bg-yellow-500 rounded hover:bg-yellow-700">
             Mas Información

@@ -182,6 +182,12 @@
                                 Prox-Dest-Activo
                             </span>
                             @break
+                            @case(9)
+                            <span
+                                class="inline-flex px-2 text-xs font-semibold leading-5 text-yellow-800 bg-yellow-100 rounded-full">
+                                Preinscripción
+                            </span>
+                            @break
                             @default
 
                             @endswitch

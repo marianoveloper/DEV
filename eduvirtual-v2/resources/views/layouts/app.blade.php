@@ -24,6 +24,7 @@
     @livewireStyles
 
     <!-- Scripts -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178248540-1"></script>
     <script>
@@ -48,6 +49,8 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @laravelPWA
 </head>
 
@@ -76,7 +79,16 @@
     @stack('modals')
 
     @livewireScripts
+    <script>
+       Livewire.on('alert',function(message){
+            Swal.fire(
+               'Uccuyo Virtual',
 
+                message,
+                'success'
+                )
+        });
+    </script>
     @isset($js)
     {{$js}}
 

@@ -16,7 +16,7 @@ class CategoryCourses extends Component
         $types= Type::all();
         $categories= Category::all();
         $courses = Course::where('status', 3)
-        ->whereIn('status_course',[5,6,7,8])
+        ->whereIn('status_course',[5,6,7,8,9])
         ->inRandomOrder()
         ->paginate(8);
 

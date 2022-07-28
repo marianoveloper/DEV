@@ -16,10 +16,14 @@
 
                 </div>
 
-            <a target="_blank" href="{{$course->link_inscription}}"
+                <a href="{{route('courses.show', $course)}}"
+                    class="block px-4 mt-1 font-bold text-center text-white bg-yellow-600 rounded hover:bg-green-900">
+                    Mas Información
+                   </a>
+           <!-- <a target="_blank" href="{{$course->link_inscription}}"
             class="block px-4 mt-1 font-bold text-center text-white bg-yellow-600 rounded hover:bg-green-900">
             Preinscripción
-           </a>
+           </a>-->
             </div>
             @endforeach
 

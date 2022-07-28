@@ -22,6 +22,7 @@ class Course extends Model
     const Destacado=6;
     const ActivoDestacado=7;
     const ActivoDestacadoProx=8;
+    const Preinscripcion=9;
 
 
 

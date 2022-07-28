@@ -16,13 +16,8 @@ class BotManController extends Controller
     {
         $botman = app('botman');
 
-
-
         $botman->listen();
     }
-
-
-
 
 
     public function startInteractive(BotMan $bot){

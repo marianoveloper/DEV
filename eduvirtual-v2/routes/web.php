@@ -9,7 +9,7 @@ use App\Http\Controllers\CourseController;
 Route::get('/', HomeController::class)->name('home');
 
 
-Route::match(['get', 'post'], '/botman', [BotManController::class,'handle']);
+//Route::match(['get', 'post'], '/botman', [BotManController::class,'handle']);
 //Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 
 
